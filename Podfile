@@ -7,6 +7,7 @@ target 'Braver' do
 
   # Pods for Braver
   pod 'RxSwift'
+  pod 'RealmSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'YogaKit', '~> 1.5'
