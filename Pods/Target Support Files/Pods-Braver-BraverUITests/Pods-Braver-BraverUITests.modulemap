@@ -1,0 +1,6 @@
+framework module Pods_Braver_BraverUITests {
+  umbrella header "Pods-Braver-BraverUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
