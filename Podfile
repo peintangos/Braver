@@ -8,6 +8,8 @@ target 'Braver' do
   # Pods for Braver
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'YogaKit', '~> 1.5'
   platform :ios, '9.0'  
 
   target 'BraverTests' do
