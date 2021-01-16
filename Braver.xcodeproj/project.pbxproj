@@ -15,6 +15,9 @@
 		0F6F73CB25B2AD6300DFCB25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F73C925B2AD6300DFCB25 /* LaunchScreen.storyboard */; };
 		0F6F73D625B2AD6300DFCB25 /* BraverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73D525B2AD6300DFCB25 /* BraverTests.swift */; };
 		0F6F73E125B2AD6300DFCB25 /* BraverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73E025B2AD6300DFCB25 /* BraverUITests.swift */; };
+		1AEDE54D71EA904DB7342729 /* Pods_BraverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */; };
+		7BD3064B26F3C94CAAE0C8A7 /* Pods_Braver_BraverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */; };
+		C54B4C5B5F8EB906293E42B0 /* Pods_Braver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33941134907F82710A43EE56 /* Pods_Braver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		0F6F73DC25B2AD6300DFCB25 /* BraverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BraverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6F73E025B2AD6300DFCB25 /* BraverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraverUITests.swift; sourceTree = "<group>"; };
 		0F6F73E225B2AD6300DFCB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraverTests.release.xcconfig"; path = "Target Support Files/Pods-BraverTests/Pods-BraverTests.release.xcconfig"; sourceTree = "<group>"; };
+		33941134907F82710A43EE56 /* Pods_Braver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver-BraverUITests.release.xcconfig"; path = "Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AC47AF9F1BB2ABE0A1DC795 /* Pods-BraverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraverTests.debug.xcconfig"; path = "Target Support Files/Pods-BraverTests/Pods-BraverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BraverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A848E60940FEE9B3BA51CC59 /* Pods-Braver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver.debug.xcconfig"; path = "Target Support Files/Pods-Braver/Pods-Braver.debug.xcconfig"; sourceTree = "<group>"; };
+		A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braver_BraverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE56216D1BA20916903E4F3E /* Pods-Braver-BraverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver-BraverUITests.debug.xcconfig"; path = "Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D33A7367A671CFDE0802F60D /* Pods-Braver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver.release.xcconfig"; path = "Target Support Files/Pods-Braver/Pods-Braver.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54B4C5B5F8EB906293E42B0 /* Pods_Braver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEDE54D71EA904DB7342729 /* Pods_BraverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD3064B26F3C94CAAE0C8A7 /* Pods_Braver_BraverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				0F6F73D425B2AD6300DFCB25 /* BraverTests */,
 				0F6F73DF25B2AD6300DFCB25 /* BraverUITests */,
 				0F6F73BC25B2AD6000DFCB25 /* Products */,
+				D8A4D8CAE46C196A90761E1A /* Pods */,
+				709618DCE4481078C11DEFEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = BraverUITests;
 			sourceTree = "<group>";
 		};
+		709618DCE4481078C11DEFEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33941134907F82710A43EE56 /* Pods_Braver.framework */,
+				A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */,
+				7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8A4D8CAE46C196A90761E1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A848E60940FEE9B3BA51CC59 /* Pods-Braver.debug.xcconfig */,
+				D33A7367A671CFDE0802F60D /* Pods-Braver.release.xcconfig */,
+				CE56216D1BA20916903E4F3E /* Pods-Braver-BraverUITests.debug.xcconfig */,
+				63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */,
+				7AC47AF9F1BB2ABE0A1DC795 /* Pods-BraverTests.debug.xcconfig */,
+				1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F6F73E525B2AD6300DFCB25 /* Build configuration list for PBXNativeTarget "Braver" */;
 			buildPhases = (
+				D8D8278F1B2EDD335E8A1E7D /* [CP] Check Pods Manifest.lock */,
 				0F6F73B725B2AD6000DFCB25 /* Sources */,
 				0F6F73B825B2AD6000DFCB25 /* Frameworks */,
 				0F6F73B925B2AD6000DFCB25 /* Resources */,
+				39420B25A9DAFED35107B871 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F6F73E825B2AD6300DFCB25 /* Build configuration list for PBXNativeTarget "BraverTests" */;
 			buildPhases = (
+				CD26A2762CBAFB595EFBE696 /* [CP] Check Pods Manifest.lock */,
 				0F6F73CD25B2AD6300DFCB25 /* Sources */,
 				0F6F73CE25B2AD6300DFCB25 /* Frameworks */,
 				0F6F73CF25B2AD6300DFCB25 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F6F73EB25B2AD6300DFCB25 /* Build configuration list for PBXNativeTarget "BraverUITests" */;
 			buildPhases = (
+				418803923EB534FCD30C479E /* [CP] Check Pods Manifest.lock */,
 				0F6F73D825B2AD6300DFCB25 /* Sources */,
 				0F6F73D925B2AD6300DFCB25 /* Frameworks */,
 				0F6F73DA25B2AD6300DFCB25 /* Resources */,
+				F03A26826CCB9FD8D7013B6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39420B25A9DAFED35107B871 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braver/Pods-Braver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braver/Pods-Braver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Braver/Pods-Braver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		418803923EB534FCD30C479E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Braver-BraverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD26A2762CBAFB595EFBE696 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BraverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8D8278F1B2EDD335E8A1E7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Braver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F03A26826CCB9FD8D7013B6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F6F73B725B2AD6000DFCB25 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		0F6F73E625B2AD6300DFCB25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A848E60940FEE9B3BA51CC59 /* Pods-Braver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +602,7 @@
 		};
 		0F6F73E725B2AD6300DFCB25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33A7367A671CFDE0802F60D /* Pods-Braver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +622,7 @@
 		};
 		0F6F73E925B2AD6300DFCB25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC47AF9F1BB2ABE0A1DC795 /* Pods-BraverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +645,7 @@
 		};
 		0F6F73EA25B2AD6300DFCB25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +668,7 @@
 		};
 		0F6F73EC25B2AD6300DFCB25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE56216D1BA20916903E4F3E /* Pods-Braver-BraverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +689,7 @@
 		};
 		0F6F73ED25B2AD6300DFCB25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
