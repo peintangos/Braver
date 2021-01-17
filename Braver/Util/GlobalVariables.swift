@@ -11,7 +11,8 @@ import UIKit
 class GlobalValiables {
 //    デバイスのUIViewを持っていいます
     var baseView:UIView?
-//    セーフエリアの高さです。
+//    セーフエリアを取得します
+    var safeArea :UIEdgeInsets?
     var safeAreaTop:CGFloat?
     var safeAreaBottom:CGFloat?
 

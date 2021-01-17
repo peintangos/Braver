@@ -9,6 +9,8 @@ import UIKit
 import YogaKit
 let global = GlobalValiables()
 class SplashViewController: UIViewController {
+    
+    var titleView:UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +18,7 @@ class SplashViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureGloablValiables()
         doLayout()
-        
+        doAnimation()
     }
     func doLayout(){
         self.view.backgroundColor = Color.yellow.getColor()
@@ -30,9 +32,9 @@ class SplashViewController: UIViewController {
           layout.height = YGValue(global.baseView!.frame.height)
             layout.alignItems = .center
         }
-        let title = UIView()
-        title.backgroundColor = Color.blue.getColor()
-        title.configureLayout{ (layout)  in
+        titleView = UIView()
+        titleView.backgroundColor = Color.blue.getColor()
+        titleView.configureLayout{ (layout)  in
           layout.isEnabled = true
           layout.flexDirection = .row
           layout.flexGrow = 1
@@ -45,23 +47,41 @@ class SplashViewController: UIViewController {
             layout.alignItems = .center
         }
         
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont(name:"Arial", size: 20.0)
-        titleLabel.text = "BRAVER"
-        titleLabel.textColor = Color.yellow.getColor()
+        let titleLabel = BRLabel(text: "BRAVER", size: 72, color: .yellow)
         titleLabel.configureLayout { (layout) in
             layout.isEnabled = true
         }
-        title.addSubview(titleLabel)
-        contentView.addSubview(title)
-    
+        titleView.addSubview(titleLabel)
+        contentView.addSubview(titleView)
+        
+//        let startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72))
+//        startButton.configureLayout { (layout) in
+//            layout.isEnabled = true
+//        }
+//        contentView.addSubview(startButton)
         view.addSubview(contentView)
-        // 5
+
         contentView.yoga.applyLayout(preservingOrigin: true)
+        
     }
     func configureGloablValiables(){
         global.baseView = self.view
-        print(self.view)
+    }
+    override func viewWillLayoutSubviews() {
+//        セーフエリアはviewWillLayoutSubviews以降で取れるらしい。
+        global.safeArea = self.view.safeAreaInsets
+        global.safeAreaTop = self.view.safeAreaInsets.top
+        global.safeAreaBottom = self.view.safeAreaInsets.bottom
+    }
+    
+    func doAnimation(){
+        
+        UIView.animate(withDuration: 2.0) {
+//            本当はセーフエリア とか考慮したいけど、一番初めのviewDidLayoutよりも前なのでセーフエリアが取れないので、/3で代用。(3である理由は特にない。）
+            let move = (global.baseView?.frame.height)! / 3
+            self.titleView.center.y -= move
+        }
+
     }
     
 
