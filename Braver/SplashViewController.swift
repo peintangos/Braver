@@ -11,7 +11,9 @@ let global = GlobalValiables()
 class SplashViewController: UIViewController {
     
     var titleView:UIView!
-
+    var startButton:BRButton!
+    var splash:BRImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,19 +29,18 @@ class SplashViewController: UIViewController {
         contentView.backgroundColor = Color.yellow.getColor()
         contentView.configureLayout { (layout) in
           layout.isEnabled = true
-          layout.flexDirection = .row
+          layout.flexDirection = .column
           layout.width = YGValue(global.baseView!.frame.width)
           layout.height = YGValue(global.baseView!.frame.height)
-            layout.alignItems = .center
+          layout.alignItems = .center
+          layout.justifyContent = .center
         }
         titleView = UIView()
         titleView.backgroundColor = Color.blue.getColor()
         titleView.configureLayout{ (layout)  in
           layout.isEnabled = true
-          layout.flexDirection = .row
-          layout.flexGrow = 1
-//            LaunchScreeen.storyboardeで画像を設定した後に、全く同じUIViewを作成して、アニメーションをつける。
-//            iPhone12ProMaxは167、8(4.7インチ)、11Pro(5.8インチ)は160、8+(5.5インチ),11(6.1インチ)、11ProMax(6.5インチ)は176
+          layout.position = .absolute
+          layout.width = YGValue(global.baseView!.frame.width)
           layout.height = 160
             
 //            タイトルのラベルを上下中央よせにする
@@ -54,11 +55,24 @@ class SplashViewController: UIViewController {
         titleView.addSubview(titleLabel)
         contentView.addSubview(titleView)
         
-//        let startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72))
-//        startButton.configureLayout { (layout) in
-//            layout.isEnabled = true
-//        }
-//        contentView.addSubview(startButton)
+        splash = BRImageView(name: "splash_24", frame: CGRect(x: 0, y: 0, width: 140, height: 140))
+        splash.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.position = .absolute
+        }
+        splash.center = view.center
+        contentView.addSubview(splash)
+
+        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72))
+        startButton.alpha = 0
+        startButton.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.position = .absolute
+        }
+        startButton.center = view.center
+        contentView.addSubview(startButton)
+        
+        
         view.addSubview(contentView)
 
         contentView.yoga.applyLayout(preservingOrigin: true)
@@ -75,13 +89,30 @@ class SplashViewController: UIViewController {
     }
     
     func doAnimation(){
-        
+    
         UIView.animate(withDuration: 2.0) {
-//            本当はセーフエリア とか考慮したいけど、一番初めのviewDidLayoutよりも前なのでセーフエリアが取れないので、/3で代用。(3である理由は特にない。）
-            let move = (global.baseView?.frame.height)! / 3
+//            本当はセーフエリア とか考慮したいけど、一番初めのviewDidLayoutよりも前なのでセーフエリアが取れないので、/4で代用。(3である理由は特にない。）
+            let move = (global.baseView?.frame.height)! / 4
             self.titleView.center.y -= move
         }
-
+        
+        UIView.animate(withDuration: 1.0) { [self] in
+            sleep(1)
+            splash.alpha = 0
+        } completion: { [self] (bool) in
+            splash.alpha = 0
+        }
+        
+        UIView.animate(withDuration: 3.0) { [self] in
+            startButton.alpha = 1
+        } completion: { [self] (bool) in
+            startButton.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 3.0) {
+            let move = (global.baseView?.frame.height)! / 7
+            self.startButton.center.y += move
+        }
     }
     
 
