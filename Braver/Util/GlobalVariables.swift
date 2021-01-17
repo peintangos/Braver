@@ -15,5 +15,6 @@ class GlobalValiables {
     var safeArea :UIEdgeInsets?
     var safeAreaTop:CGFloat?
     var safeAreaBottom:CGFloat?
+    let splashTilteHeight = 160
 
 }

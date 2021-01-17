@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="896" viewBox="0 0 414 896">
+  <defs>
+    <clipPath id="clip-splash_background">
+      <rect width="414" height="896"/>
+    </clipPath>
+  </defs>
+  <g id="splash_background" clip-path="url(#clip-splash_background)">
+    <rect width="414" height="896" fill="#d7a95a"/>
+  </g>
+</svg>

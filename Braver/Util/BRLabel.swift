@@ -9,15 +9,16 @@ import UIKit
 
 class BRLabel: UILabel {
     
-    init(text:String,size:CGFloat,color:Color,width:CGFloat = 50,height:CGFloat = 50) {
+    init(text:String,size:CGFloat,color:Color,width:CGFloat = 50,height:CGFloat = 50,alpha:CGFloat = 1.0) {
         super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))
-        self.createLabel(text: text, size: size, color: color)
+        self.createLabel(text: text, size: size, color: color, alpha: alpha)
     }
     
-    func createLabel(text:String,size:CGFloat,color:Color){
+    func createLabel(text:String,size:CGFloat,color:Color,alpha:CGFloat){
         self.text = text
         self.font = UIFont.init(name: "Arial-BoldMT", size: size)
         self.textColor = color.getColor()
+        self.alpha = alpha
     }
     
     required init?(coder: NSCoder) {
