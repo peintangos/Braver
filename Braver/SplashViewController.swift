@@ -13,6 +13,7 @@ class SplashViewController: UIViewController {
     var titleView:UIView!
     var startButton:BRButton!
     var splash:BRImageView!
+    var titleLabel:BRLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,8 @@ class SplashViewController: UIViewController {
         doAnimation()
     }
     func doLayout(){
-        self.view.backgroundColor = Color.yellow.getColor()
-        
-        let contentView = UIView()
-        contentView.backgroundColor = Color.yellow.getColor()
+//        BRViewでレイアウト系を決めるのか、configureLayoutを使うのか決めれていない
+        let contentView = BRView(backgroundColor: .yellow)
         contentView.configureLayout { (layout) in
           layout.isEnabled = true
           layout.flexDirection = .column
@@ -35,20 +34,18 @@ class SplashViewController: UIViewController {
           layout.alignItems = .center
           layout.justifyContent = .center
         }
-        titleView = UIView()
-        titleView.backgroundColor = Color.blue.getColor()
+        titleView = BRView(backgroundColor: .blue, frame: CGRect(x: 0, y: 0, width: 0   , height: 0),alpha: 0.0)
         titleView.configureLayout{ (layout)  in
           layout.isEnabled = true
           layout.position = .absolute
           layout.width = YGValue(global.baseView!.frame.width)
-          layout.height = 160
-            
+          layout.height = YGValue(integerLiteral: global.splashTilteHeight)
 //            タイトルのラベルを上下中央よせにする
             layout.justifyContent = .center
             layout.alignItems = .center
         }
         
-        let titleLabel = BRLabel(text: "BRAVER", size: 72, color: .yellow)
+        titleLabel = BRLabel(text: "BRAVER", size: 72, color: .yellow)
         titleLabel.configureLayout { (layout) in
             layout.isEnabled = true
         }
@@ -63,15 +60,13 @@ class SplashViewController: UIViewController {
         splash.center = view.center
         contentView.addSubview(splash)
 
-        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72))
-        startButton.alpha = 0
+        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72),alpha:0.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.position = .absolute
         }
         startButton.center = view.center
         contentView.addSubview(startButton)
-        
         
         view.addSubview(contentView)
 
@@ -90,29 +85,35 @@ class SplashViewController: UIViewController {
     
     func doAnimation(){
     
-        UIView.animate(withDuration: 2.0) {
-//            本当はセーフエリア とか考慮したいけど、一番初めのviewDidLayoutよりも前なのでセーフエリアが取れないので、/4で代用。(3である理由は特にない。）
+        UIView.animate(withDuration: 1.0) { [self] in
+            splash.alpha = 0
+        } completion: { [self] (bool) in
+            splash.alpha = 0
+        }
+        UIView.animate(withDuration: 3.0, delay: 1.0, options: UIView.AnimationOptions.init()) {
             let move = (global.baseView?.frame.height)! / 4
             self.titleView.center.y -= move
+        } completion: { _ in
+        }
+
+        UIView.animate(withDuration: 3, delay: 1, options: UIView.AnimationOptions.init()) {
+            self.titleView.alpha = 1
+        } completion: { _ in
+            self.titleView.alpha = 1
         }
         
-        UIView.animate(withDuration: 1.0) { [self] in
-            sleep(1)
-            splash.alpha = 0
-        } completion: { [self] (bool) in
-            splash.alpha = 0
+        UIView.animate(withDuration: 3, delay: 1, options: UIView.AnimationOptions.init()) {
+            self.titleLabel.alpha = 1
+        } completion: { _ in
+            self.titleLabel.alpha = 1
         }
         
-        UIView.animate(withDuration: 3.0) { [self] in
-            startButton.alpha = 1
-        } completion: { [self] (bool) in
-            startButton.alpha = 1
+        UIView.animate(withDuration: 3, delay: 1, options: UIView.AnimationOptions.init()) {
+            self.startButton.alpha = 1
+        } completion: { _ in
+            self.startButton.alpha = 1
         }
         
-        UIView.animate(withDuration: 3.0) {
-            let move = (global.baseView?.frame.height)! / 7
-            self.startButton.center.y += move
-        }
     }
     
 

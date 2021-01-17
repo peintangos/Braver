@@ -14,9 +14,9 @@
             filePath = "Braver/Util/BRButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(backgroundColor:textColor:text:textSize:frame:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(backgroundColor:textColor:text:textSize:frame:alpha:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
