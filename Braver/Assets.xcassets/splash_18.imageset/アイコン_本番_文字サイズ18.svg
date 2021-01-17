@@ -1,0 +1,19 @@
+<svg id="アイコン_本番_文字サイズ18" xmlns="http://www.w3.org/2000/svg" width="137.5" height="145" viewBox="0 0 137.5 145">
+  <g id="アイコン_" data-name="アイコン③">
+    <g id="アイコン_2" data-name="アイコン②">
+      <g id="アイコン_3" data-name="アイコン①">
+        <g id="アイコン_4" data-name="アイコン①">
+          <rect id="長方形_26" data-name="長方形 26" width="137" height="145" fill="#2d5ab5"/>
+          <line id="線_9" data-name="線 9" x2="137" transform="translate(0.5 72.5)" fill="none" stroke="#fff" stroke-width="1"/>
+          <g id="グループ_16" data-name="グループ 16" transform="translate(-6)">
+            <g id="コンポーネント_43_1" data-name="コンポーネント 43 – 1" transform="translate(38 60)">
+              <text id="br" transform="translate(0 19)" fill="#dfa849" font-size="18" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">BR</tspan></text>
+              <text id="ber" transform="translate(39 19)" fill="#dfa849" font-size="18" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">BER</tspan></text>
+              <text id="a" transform="translate(26 16)" fill="#dfa849" font-size="18" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

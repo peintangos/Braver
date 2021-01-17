@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="1007" viewBox="0 0 414 1007">
+  <defs>
+    <clipPath id="clip-結果画面_1">
+      <rect width="414" height="1007"/>
+    </clipPath>
+  </defs>
+  <g id="結果画面_1" data-name="結果画面 – 1" clip-path="url(#clip-結果画面_1)">
+    <rect width="414" height="1007" fill="#d7a95a"/>
+    <g id="_背景:白_文字:黄_結果画面_セクションタイトル" data-name="[背景:白][文字:黄]結果画面_セクションタイトル" transform="translate(0 229)">
+      <rect id="長方形_20" data-name="長方形 20" width="414" height="48" fill="#fff"/>
+      <g id="グループ_5" data-name="グループ 5" transform="translate(159 12)">
+        <text id="Ranking" transform="translate(0 21)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Ranking</tspan></text>
+      </g>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_テーブルセル_テーブルヘッダ" data-name="[背景:白][文字:黄]結果画面_テーブルセル_テーブルヘッダ" transform="translate(0 309)">
+      <rect id="長方形_21" data-name="長方形 21" width="414" height="60" fill="#fff"/>
+      <text id="順位" transform="translate(16 24)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">順位</tspan></text>
+      <text id="選択した数字" transform="translate(32 50)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">選択した数字</tspan></text>
+      <text id="名前" transform="translate(124 24)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">名前</tspan></text>
+      <text id="スコア" transform="translate(235 24)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">スコア</tspan></text>
+      <text id="真ん中" transform="translate(235 50)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">真ん中</tspan></text>
+      <text id="被り" transform="translate(312 50)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">被り</tspan></text>
+      <text id="真ん中-2" data-name="真ん中" transform="translate(235 50)" fill="#dfa849" font-size="16" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="0">真ん中</tspan></text>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_テーブルセル" data-name="[背景:白][文字:黄]結果画面_テーブルセル" transform="translate(0 369)">
+      <g id="_背景:白_文字:黄_結果画面_テーブルセル_テーブルヘッダ-2" data-name="[背景:白][文字:黄]結果画面_テーブルセル_テーブルヘッダ">
+        <rect id="長方形_21-2" data-name="長方形 21" width="414" height="60" fill="#fff"/>
+        <text id="_1位" data-name="1位" transform="translate(16 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">1</tspan><tspan y="0" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="400">位</tspan></text>
+        <text id="_8" data-name="8" transform="translate(71 47)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">8</tspan></text>
+        <text id="Player1" transform="translate(124 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">PLAYER1</tspan></text>
+        <text id="_10" data-name="10" transform="translate(235 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">10</tspan></text>
+        <text id="_" data-name="○" transform="translate(235 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+        <text id="_2" data-name="×" transform="translate(312 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">×</tspan></text>
+      </g>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_テーブルセル-2" data-name="[背景:白][文字:黄]結果画面_テーブルセル" transform="translate(0 429)">
+      <g id="_背景:白_文字:黄_結果画面_テーブルセル_テーブルヘッダ-3" data-name="[背景:白][文字:黄]結果画面_テーブルセル_テーブルヘッダ">
+        <rect id="長方形_21-3" data-name="長方形 21" width="414" height="60" fill="#fff"/>
+        <text id="_2位" data-name="2位" transform="translate(16 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">2</tspan><tspan y="0" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="400">位</tspan></text>
+        <text id="_7" data-name="7" transform="translate(71 47)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">7</tspan></text>
+        <text id="Player2" transform="translate(124 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">PLAYER2</tspan></text>
+        <text id="_4" data-name="4" transform="translate(235 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">4</tspan></text>
+        <text id="_3" data-name="○" transform="translate(235 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+        <text id="_4-2" data-name="×" transform="translate(312 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">×</tspan></text>
+      </g>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_テーブルセル-3" data-name="[背景:白][文字:黄]結果画面_テーブルセル" transform="translate(0 489)">
+      <g id="_背景:白_文字:黄_結果画面_テーブルセル_テーブルヘッダ-4" data-name="[背景:白][文字:黄]結果画面_テーブルセル_テーブルヘッダ">
+        <rect id="長方形_21-4" data-name="長方形 21" width="414" height="60" fill="#fff"/>
+        <text id="_3位" data-name="3位" transform="translate(16 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">3</tspan><tspan y="0" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="400">位</tspan></text>
+        <text id="_6" data-name="6" transform="translate(71 47)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">6</tspan></text>
+        <text id="Player3" transform="translate(124 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">PLAYER3</tspan></text>
+        <text id="_0" data-name="0" transform="translate(235 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">0</tspan></text>
+        <text id="_5" data-name="○" transform="translate(235 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+        <text id="_6-2" data-name="○" transform="translate(312 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+      </g>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_テーブルセル-4" data-name="[背景:白][文字:黄]結果画面_テーブルセル" transform="translate(0 549)">
+      <g id="_背景:白_文字:黄_結果画面_テーブルセル_テーブルヘッダ-5" data-name="[背景:白][文字:黄]結果画面_テーブルセル_テーブルヘッダ">
+        <rect id="長方形_21-5" data-name="長方形 21" width="414" height="60" fill="#fff"/>
+        <text id="_3位-2" data-name="3位" transform="translate(16 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">3</tspan><tspan y="0" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="400">位</tspan></text>
+        <text id="_10_" data-name="10 " transform="translate(71 47)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">10 </tspan></text>
+        <text id="Player4" transform="translate(124 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">PLAYER4</tspan></text>
+        <text id="_0-2" data-name="0" transform="translate(235 24)" fill="#dfa849" font-size="16" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">0</tspan></text>
+        <text id="_7-2" data-name="○" transform="translate(235 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+        <text id="_8-2" data-name="○" transform="translate(312 50)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">○</tspan></text>
+      </g>
+    </g>
+    <g id="_背景:白_文字:黄_結果画面_セクションタイトル-2" data-name="[背景:白][文字:黄]結果画面_セクションタイトル" transform="translate(0 641)">
+      <rect id="長方形_20-2" data-name="長方形 20" width="414" height="48" fill="#fff"/>
+      <g id="グループ_5-2" data-name="グループ 5" transform="translate(159 12)">
+        <text id="Bar" transform="translate(28 21)" fill="#dfa849" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Bar</tspan></text>
+      </g>
+    </g>
+    <g id="タイトル" transform="translate(105 904)">
+      <text id="Back" transform="translate(0 58)" fill="#2d5ab5" font-size="64" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">BACK</tspan></text>
+    </g>
+    <g id="グループ_12" data-name="グループ 12" transform="translate(0 16)">
+      <g id="スライダーバー全部のせ" transform="translate(32 705)">
+        <g id="長方形_9" data-name="長方形 9" transform="translate(0.5)" fill="#2d5ab5" stroke="#707070" stroke-width="1">
+          <rect width="350" height="119" stroke="none"/>
+          <rect x="0.5" y="0.5" width="349" height="118" fill="none"/>
+        </g>
+        <line id="線_1" data-name="線 1" x2="351" transform="translate(0 54.576)" fill="none" stroke="#fff" stroke-width="1"/>
+        <line id="線_2" data-name="線 2" y2="59" transform="translate(176 24.5)" fill="none" stroke="#fff" stroke-width="1"/>
+      </g>
+      <g id="_黄色_吹き出し" data-name="[黄色]吹き出し" transform="translate(184 737)">
+        <path id="多角形_1" data-name="多角形 1" d="M7,0l7,12H0Z" transform="translate(13 17.173) rotate(-60)" fill="#fff"/>
+        <rect id="長方形_22" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+        <text id="Player1-2" data-name="Player1" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player1</tspan></text>
+      </g>
+      <g id="_黄色_吹き出し-2" data-name="[黄色]吹き出し" transform="translate(108 737)">
+        <path id="多角形_1-2" data-name="多角形 1" d="M7,0l7,12H0Z" transform="translate(13 17.173) rotate(-60)" fill="#fff"/>
+        <rect id="長方形_22-2" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+        <text id="Player1-3" data-name="Player1" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player1</tspan></text>
+      </g>
+      <g id="_黄色_吹き出し_3人用_" data-name="[黄色]吹き出し（3人用）" transform="translate(250 713)">
+        <g id="グループ_11" data-name="グループ 11" transform="translate(-1121 -3089)">
+          <g id="_黄色_吹き出し_2人用_" data-name="[黄色]吹き出し（2人用）" transform="translate(1121 3089)">
+            <g id="_黄色_吹き出し-3" data-name="[黄色]吹き出し">
+              <path id="多角形_1-3" data-name="多角形 1" d="M7,0l7,12H0Z" transform="translate(13 41.173) rotate(-60)" fill="#fff"/>
+              <g id="グループ_8" data-name="グループ 8">
+                <rect id="長方形_22-3" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+                <text id="Player1-4" data-name="Player1" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player1</tspan></text>
+              </g>
+              <g id="グループ_9" data-name="グループ 9" transform="translate(0 12)">
+                <rect id="長方形_22-4" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+                <text id="Player2-2" data-name="Player2" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player2</tspan></text>
+              </g>
+              <g id="グループ_10" data-name="グループ 10" transform="translate(0 24)">
+                <rect id="長方形_22-5" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+                <text id="Player3-2" data-name="Player3" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player3</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="_黄色_吹き出し_2人用_2" data-name="[黄色]吹き出し（2人用）" transform="translate(304 727)">
+        <g id="_黄色_吹き出し-4" data-name="[黄色]吹き出し">
+          <path id="多角形_1-4" data-name="多角形 1" d="M7,0l7,12H0Z" transform="translate(13 27.173) rotate(-60)" fill="#fff"/>
+          <g id="グループ_8-2" data-name="グループ 8">
+            <rect id="長方形_22-6" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+            <text id="Player1-5" data-name="Player1" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player1</tspan></text>
+          </g>
+          <g id="グループ_9-2" data-name="グループ 9" transform="translate(0 12)">
+            <rect id="長方形_22-7" data-name="長方形 22" width="47" height="12" fill="#fff"/>
+            <text id="Player2-3" data-name="Player2" transform="translate(10 9)" fill="#dfa849" font-size="8" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">Player2</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g id="数字ラベル" transform="translate(203 774)">
+        <text id="_8-3" data-name="8" transform="translate(0 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">8</tspan></text>
+      </g>
+      <g id="数字ラベル-2" data-name="数字ラベル" transform="translate(265 774)">
+        <text id="_10-2" data-name="10" transform="translate(0 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">10</tspan></text>
+        <text id="_13" data-name="13" transform="translate(55 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">13</tspan></text>
+        <text id="_16" data-name="16" transform="translate(93 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">16</tspan></text>
+      </g>
+      <g id="数字ラベル-3" data-name="数字ラベル" transform="translate(40 774)">
+        <text id="_6-3" data-name="6" transform="translate(87 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">6</tspan></text>
+        <text id="_0-3" data-name="0" transform="translate(0 14)" fill="#fff" font-size="16" font-family="ArialMT, Arial"><tspan x="0" y="0">0</tspan></text>
+      </g>
+      <line id="線_3" data-name="線 3" y2="22" transform="translate(45.5 748.5)" fill="none" stroke="#fff" stroke-width="1"/>
+      <line id="線_4" data-name="線 4" y2="22" transform="translate(367.5 748.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+    <g id="タイトル-2" data-name="タイトル" transform="translate(0 48)">
+      <g id="グループ_1" data-name="グループ 1">
+        <rect id="長方形_8" data-name="長方形 8" width="414" height="120" fill="#2d5ab5"/>
+      </g>
+      <text id="Result" transform="translate(89 81)" fill="#dfa849" font-size="60" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">RESULT</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -19,6 +19,7 @@
 		0FA3FE8525B4267E008086E3 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE8425B4267E008086E3 /* GlobalVariables.swift */; };
 		0FA3FE9225B42BF7008086E3 /* BRLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE9125B42BF7008086E3 /* BRLabel.swift */; };
 		0FA3FE9725B4361E008086E3 /* BRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE9625B4361E008086E3 /* BRButton.swift */; };
+		0FA3FEA525B44AE4008086E3 /* BRImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FEA425B44AE4008086E3 /* BRImageView.swift */; };
 		1AEDE54D71EA904DB7342729 /* Pods_BraverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */; };
 		7BD3064B26F3C94CAAE0C8A7 /* Pods_Braver_BraverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */; };
 		C54B4C5B5F8EB906293E42B0 /* Pods_Braver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33941134907F82710A43EE56 /* Pods_Braver.framework */; };
@@ -60,6 +61,7 @@
 		0FA3FE8425B4267E008086E3 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		0FA3FE9125B42BF7008086E3 /* BRLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BRLabel.swift; path = Braver/Util/BRLabel.swift; sourceTree = SOURCE_ROOT; };
 		0FA3FE9625B4361E008086E3 /* BRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BRButton.swift; path = Braver/Util/BRButton.swift; sourceTree = SOURCE_ROOT; };
+		0FA3FEA425B44AE4008086E3 /* BRImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BRImageView.swift; path = Braver/Util/BRImageView.swift; sourceTree = SOURCE_ROOT; };
 		1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraverTests.release.xcconfig"; path = "Target Support Files/Pods-BraverTests/Pods-BraverTests.release.xcconfig"; sourceTree = "<group>"; };
 		33941134907F82710A43EE56 /* Pods_Braver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver-BraverUITests.release.xcconfig"; path = "Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				0FA3FE9125B42BF7008086E3 /* BRLabel.swift */,
 				0FA3FE9625B4361E008086E3 /* BRButton.swift */,
+				0FA3FEA425B44AE4008086E3 /* BRImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3FEA525B44AE4008086E3 /* BRImageView.swift in Sources */,
 				0FA3FE8525B4267E008086E3 /* GlobalVariables.swift in Sources */,
 				0FA3FE9725B4361E008086E3 /* BRButton.swift in Sources */,
 				0FA3FE9225B42BF7008086E3 /* BRLabel.swift in Sources */,
@@ -709,6 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJPV4X8ST6;
 				INFOPLIST_FILE = Braver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -729,6 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJPV4X8ST6;
 				INFOPLIST_FILE = Braver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
