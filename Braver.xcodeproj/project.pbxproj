@@ -14,6 +14,9 @@
 		0F6F73CB25B2AD6300DFCB25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F73C925B2AD6300DFCB25 /* LaunchScreen.storyboard */; };
 		0F6F73D625B2AD6300DFCB25 /* BraverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73D525B2AD6300DFCB25 /* BraverTests.swift */; };
 		0F6F73E125B2AD6300DFCB25 /* BraverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73E025B2AD6300DFCB25 /* BraverUITests.swift */; };
+		0FA3FE7125B425E9008086E3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE7025B425E9008086E3 /* SplashViewController.swift */; };
+		0FA3FE7A25B42650008086E3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE7925B42650008086E3 /* Color.swift */; };
+		0FA3FE8525B4267E008086E3 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FE8425B4267E008086E3 /* GlobalVariables.swift */; };
 		1AEDE54D71EA904DB7342729 /* Pods_BraverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */; };
 		7BD3064B26F3C94CAAE0C8A7 /* Pods_Braver_BraverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */; };
 		C54B4C5B5F8EB906293E42B0 /* Pods_Braver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33941134907F82710A43EE56 /* Pods_Braver.framework */; };
@@ -50,6 +53,9 @@
 		0F6F73DC25B2AD6300DFCB25 /* BraverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BraverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6F73E025B2AD6300DFCB25 /* BraverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraverUITests.swift; sourceTree = "<group>"; };
 		0F6F73E225B2AD6300DFCB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FA3FE7025B425E9008086E3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Braver/SplashViewController.swift; sourceTree = SOURCE_ROOT; };
+		0FA3FE7925B42650008086E3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0FA3FE8425B4267E008086E3 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraverTests.release.xcconfig"; path = "Target Support Files/Pods-BraverTests/Pods-BraverTests.release.xcconfig"; sourceTree = "<group>"; };
 		33941134907F82710A43EE56 /* Pods_Braver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver-BraverUITests.release.xcconfig"; path = "Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,12 +120,11 @@
 		0F6F73BD25B2AD6000DFCB25 /* Braver */ = {
 			isa = PBXGroup;
 			children = (
-				0FA3FD9625B3E608008086E3 /* Presentation */,
+				0FA3FE6F25B4257E008086E3 /* Util */,
+				0FA3FE6825B42575008086E3 /* Presentation */,
+				0FA3FE6325B4255E008086E3 /* Domain */,
 				0F6F73BE25B2AD6000DFCB25 /* AppDelegate.swift */,
-				0FA3FD9D25B3E60E008086E3 /* Util */,
 				0F6F73C025B2AD6000DFCB25 /* SceneDelegate.swift */,
-				0FA3FD9125B3E600008086E3 /* Data */,
-				0FA3FD9225B3E600008086E3 /* Domain */,
 				0F6F73C225B2AD6000DFCB25 /* ViewController.swift */,
 				0F6F73C725B2AD6300DFCB25 /* Assets.xcassets */,
 				0F6F73C925B2AD6300DFCB25 /* LaunchScreen.storyboard */,
@@ -146,104 +151,117 @@
 			path = BraverUITests;
 			sourceTree = "<group>";
 		};
-		0FA3FD9125B3E600008086E3 /* Data */ = {
+		0FA3FE6325B4255E008086E3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		0FA3FD9225B3E600008086E3 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				0FA3FD9325B3E600008086E3 /* Repository */,
-				0FA3FD9425B3E600008086E3 /* Model */,
-				0FA3FD9525B3E600008086E3 /* UseCase */,
+				0FA3FE6425B4255E008086E3 /* Repository */,
+				0FA3FE6525B4255E008086E3 /* Model */,
+				0FA3FE6625B4255E008086E3 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		0FA3FD9325B3E600008086E3 /* Repository */ = {
+		0FA3FE6425B4255E008086E3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		0FA3FD9425B3E600008086E3 /* Model */ = {
+		0FA3FE6525B4255E008086E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3FE7825B42648008086E3 /* Enum */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0FA3FD9525B3E600008086E3 /* UseCase */ = {
+		0FA3FE6625B4255E008086E3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3FE6725B4255E008086E3 /* Translater */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		0FA3FD9625B3E608008086E3 /* Presentation */ = {
+		0FA3FE6725B4255E008086E3 /* Translater */ = {
 			isa = PBXGroup;
 			children = (
-				0FA3FD9725B3E608008086E3 /* UI */,
-				0FA3FD9C25B3E608008086E3 /* Presenter */,
+			);
+			path = Translater;
+			sourceTree = "<group>";
+		};
+		0FA3FE6825B42575008086E3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3FE6925B42575008086E3 /* UI */,
+				0FA3FE6E25B42575008086E3 /* Presenter */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		0FA3FD9725B3E608008086E3 /* UI */ = {
+		0FA3FE6925B42575008086E3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0FA3FD9825B3E608008086E3 /* ViewModel */,
-				0FA3FD9925B3E608008086E3 /* Cell */,
-				0FA3FD9A25B3E608008086E3 /* View */,
-				0FA3FD9B25B3E608008086E3 /* ViewController */,
+				0FA3FE6A25B42575008086E3 /* ViewModel */,
+				0FA3FE6B25B42575008086E3 /* Cell */,
+				0FA3FE6C25B42575008086E3 /* View */,
+				0FA3FE6D25B42575008086E3 /* ViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		0FA3FD9825B3E608008086E3 /* ViewModel */ = {
+		0FA3FE6A25B42575008086E3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0FA3FD9925B3E608008086E3 /* Cell */ = {
+		0FA3FE6B25B42575008086E3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		0FA3FD9A25B3E608008086E3 /* View */ = {
+		0FA3FE6C25B42575008086E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		0FA3FD9B25B3E608008086E3 /* ViewController */ = {
+		0FA3FE6D25B42575008086E3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3FE7025B425E9008086E3 /* SplashViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		0FA3FD9C25B3E608008086E3 /* Presenter */ = {
+		0FA3FE6E25B42575008086E3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		0FA3FD9D25B3E60E008086E3 /* Util */ = {
+		0FA3FE6F25B4257E008086E3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3FE8425B4267E008086E3 /* GlobalVariables.swift */,
 			);
-			path = Util;
+			name = Util;
+			path = Braver/Util;
+			sourceTree = SOURCE_ROOT;
+		};
+		0FA3FE7825B42648008086E3 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3FE7925B42650008086E3 /* Color.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		709618DCE4481078C11DEFEA /* Frameworks */ = {
@@ -506,9 +524,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3FE8525B4267E008086E3 /* GlobalVariables.swift in Sources */,
+				0FA3FE7A25B42650008086E3 /* Color.swift in Sources */,
 				0F6F73C325B2AD6000DFCB25 /* ViewController.swift in Sources */,
 				0F6F73BF25B2AD6000DFCB25 /* AppDelegate.swift in Sources */,
 				0F6F73C125B2AD6000DFCB25 /* SceneDelegate.swift in Sources */,
+				0FA3FE7125B425E9008086E3 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
