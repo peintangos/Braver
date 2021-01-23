@@ -19,6 +19,11 @@ class CommonBraverViewController :BaseNavigationViewController{
     var selfNumber:Int!
     var name:String!
     var startButton:UIButton!
+    var inputNumber:BRLabel!
+    var input:NumberInputSlider!
+    var isTapped:Bool?
+    private let sliderInputViewModel = NumberInputSliderViewModel()
+    let dispose = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         doLayout()
@@ -46,7 +51,7 @@ class CommonBraverViewController :BaseNavigationViewController{
             layout.height = YGValue(global.baseView!.frame.height)
             layout.flexDirection = .column
         }
-        let titleLabel = BRLabel(text: name, textSize: 60, color: .yellow, width: global.baseView!.frame.width, height: 120, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
+        let titleLabel = BRLabel(text: name, textSize: 60, color: .yellow, width: global.baseView!.frame.width, height: 333, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
         titleLabel.configureLayout { (layout) in
             layout.isEnabled = true
             layout.marginTop = YGValue(32 + global.safeAreaTop!)
@@ -54,9 +59,27 @@ class CommonBraverViewController :BaseNavigationViewController{
             layout.width = YGValue(global.baseView!.frame.width)
             layout.height = YGValue(120)
         }
-        startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "STRAT", textSize: 60, frame: CGRect(x: 0, y: 0, width: 210, height: 72), alpha: 0.5)
+//        TODO なんでも良いが、textに値を入れないとYogaがスペースを認識せずに、潰れてしまう。
+        inputNumber = BRLabel(text: "8", textSize: 108, color: .white, width: 0, height: 0, alpha: 1, backGroundColor: .yellow, yose: NSTextAlignment.center)
+        inputNumber = BRLabel(text: "8", textSize: 108, color: .white, alpha: 1, backGroundColor: .yellow, yose: .center)
+        inputNumber.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.marginTop = 32
+            layout.marginBottom = 32
+        }
+        input = NumberInputSlider(backgroundColor:Color.blue)
+        input.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.marginTop = 32
+            layout.marginBottom = 32
+            layout.width = YGValue((global.baseView?.frame.width)! - 64)
+            layout.height = YGValue(84)
+            layout.alignSelf = .center
+        }
+        startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "STRAT", textSize: 60, alpha: 1.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
+            layout.marginTop = 32
             layout.width = YGValue(210)
             layout.height = YGValue(72)
 //            最近気づいたことだが、configureLayoutの中でwidthとheightを意図的に設定してあげないとflex-directionとか効かない。
@@ -65,12 +88,23 @@ class CommonBraverViewController :BaseNavigationViewController{
         }
         
         contetView.addSubview(titleLabel)
+        contetView.addSubview(inputNumber)
+        contetView.addSubview(input)
         contetView.addSubview(startButton)
         view.addSubview(contetView)
         contetView.yoga.applyLayout(preservingOrigin: true)
         
     }
     func doBind(){
+        input
+            .rx
+            .value
+            .map{ Int($0)}.bind(to: sliderInputViewModel.valueBehaviorSubject)
+            .disposed(by: dispose)
+
+        sliderInputViewModel.valueBehaviorSubject
+            .map { String($0) }
+            .bind(to: inputNumber.rx.text)
         
     }
 }

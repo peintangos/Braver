@@ -10,9 +10,7 @@ import UIKit
 
 class Router {
     static func movePageByModal(from:UIViewController,to:BaseNavigationViewController){
-        from.present(to, animated: true) {
-            
-        }
+        from.present(to, animated: true) {}
     }
     static func movePageByPush(){
         

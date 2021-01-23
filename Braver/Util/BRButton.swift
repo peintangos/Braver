@@ -8,17 +8,16 @@
 import UIKit
 
 class BRButton: UIButton {
-    func createButton(backgroundColor:Color,textColor:Color,text:String,textSize :CGFloat = 64,frame:CGRect = CGRect(x: 0, y: 0, width: 0, height: 0),alpha:CGFloat){
+    func createButton(backgroundColor:Color,textColor:Color,text:String,textSize :CGFloat = 64,alpha:CGFloat){
         self.backgroundColor = backgroundColor.getColor()
         self.setTitle(text, for: UIControl.State.normal)
         self.setTitleColor(textColor.getColor(), for: UIControl.State.normal)
         self.titleLabel?.font = UIFont.init(name: "Arial-BoldMT", size: textSize)
-        self.frame = frame
         self.alpha = alpha
     }
-    init(backgroundColor:Color,textColor:Color,text:String,textSize :CGFloat = 64,frame:CGRect,alpha:CGFloat) {
-        super.init(frame: frame)
-        self.createButton(backgroundColor: backgroundColor, textColor: textColor, text: text,frame: frame,alpha:alpha)
+    init(backgroundColor:Color,textColor:Color,text:String,textSize :CGFloat = 64,alpha:CGFloat) {
+        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        self.createButton(backgroundColor: backgroundColor, textColor: textColor, text: text,alpha:alpha)
     }
     
     required init?(coder: NSCoder) {
