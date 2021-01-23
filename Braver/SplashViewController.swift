@@ -7,6 +7,8 @@
 
 import UIKit
 import YogaKit
+import RxSwift
+import RxCocoa
 let global = GlobalValiables()
 class SplashViewController: UIViewController {
     
@@ -14,6 +16,7 @@ class SplashViewController: UIViewController {
     var startButton:BRButton!
     var splash:BRImageView!
     var titleLabel:BRLabel!
+    let dispose = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,25 @@ class SplashViewController: UIViewController {
         configureGloablValiables()
         doLayout()
         doAnimation()
+        
+        self.startButton.addTarget(self, action: #selector(doRouter), for: UIControl.Event.touchUpInside)
     }
+    
+    @objc func doRouter(){
+            Router.showActionSheet(viewController:self,brAlertControler:
+                                    BRAlertController()
+                                    .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue)
+                                    .addAction(from: self, title: "3人")
+                                    .addAction(from: self,title: "4人")
+                                    .addAction(from: self,title: "5人")
+                                    .addAction(from: self,title: "6人")
+                                    .addAction(from: self,title: "7人")
+                                    .addAction(from: self,title: "8人")
+                                    .addAction(from: self,title: "9人")
+                                    .addAction(from: self,title: "10人"))
+    }
+    
+    
     func doLayout(){
 //        BRViewでレイアウト系を決めるのか、configureLayoutを使うのか決めれていない
         let contentView = BRView(backgroundColor: .yellow)
@@ -45,7 +66,7 @@ class SplashViewController: UIViewController {
             layout.alignItems = .center
         }
         
-        titleLabel = BRLabel(text: "BRAVER", size: 72, color: .yellow)
+        titleLabel = BRLabel(text: "BRAVER", textSize: 72, color: .yellow,backGroundColor: .blue,yose:NSTextAlignment.center)
         titleLabel.configureLayout { (layout) in
             layout.isEnabled = true
         }
