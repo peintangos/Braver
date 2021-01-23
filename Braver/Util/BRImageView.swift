@@ -8,7 +8,7 @@
 import UIKit
 
 class BRImageView: UIImageView {
-    init(name:String,frame:CGRect = CGRect(x: 0, y: 0, width: 140, height: 140)) {
+    init(name:String,frame:CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)) {
         super.init(frame: frame)
         self.image = UIImage(named: name)
         self.contentMode = ContentMode.scaleAspectFill

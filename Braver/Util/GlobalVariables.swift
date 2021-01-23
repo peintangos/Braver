@@ -16,5 +16,7 @@ class GlobalValiables {
     var safeAreaTop:CGFloat?
     var safeAreaBottom:CGFloat?
     let splashTilteHeight = 160
+    
+    let maxValue:Int = 101
 
 }

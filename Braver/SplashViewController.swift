@@ -81,7 +81,7 @@ class SplashViewController: UIViewController {
         splash.center = view.center
         contentView.addSubview(splash)
 
-        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64, frame:CGRect(x: 0, y: 0, width: 210, height: 72),alpha:0.0)
+        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64,alpha:0.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.position = .absolute
