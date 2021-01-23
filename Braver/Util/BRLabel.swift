@@ -9,16 +9,21 @@ import UIKit
 
 class BRLabel: UILabel {
     
-    init(text:String,size:CGFloat,color:Color,width:CGFloat = 50,height:CGFloat = 50,alpha:CGFloat = 1.0) {
+//    TODO BRLabelにwidth/heightを設定してもうまく反映されなかったので、Yogaのconfigurelayoutで意図的に設定した。
+//    TODO NSTextAlignmetを設定しないと左寄せになってしまう。なお、子要素ではなくテキストが自分自身についているため、このように無理やり引数を指定するしかなかった。
+//    TODO デフォルトで中央よせとする
+    init(text:String,textSize:CGFloat,color:Color,width:CGFloat = 50,height:CGFloat = 50,alpha:CGFloat = 1.0,backGroundColor:Color! = .yellow,yose:NSTextAlignment = .center) {
         super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))
-        self.createLabel(text: text, size: size, color: color, alpha: alpha)
+        self.createLabel(text: text, size: textSize, color: color, alpha: alpha, backGroundColor: backGroundColor,yose:yose)
     }
     
-    func createLabel(text:String,size:CGFloat,color:Color,alpha:CGFloat){
+    func createLabel(text:String,size:CGFloat,color:Color,alpha:CGFloat,backGroundColor:Color,yose:NSTextAlignment){
         self.text = text
         self.font = UIFont.init(name: "Arial-BoldMT", size: size)
         self.textColor = color.getColor()
         self.alpha = alpha
+        self.backgroundColor = backGroundColor.getColor()
+        self.textAlignment = yose
     }
     
     required init?(coder: NSCoder) {
