@@ -142,6 +142,6 @@ class CommonBraverNavigationController:UIViewController{
         self.startButton.addTarget(self, action: #selector(doMove), for: UIControl.Event.touchUpInside)
     }
     @objc func doMove(){
-        Router.movePageByPush(from: self, to: CommonBraverViewController(totalPlayerNumber: global.totalPlayerNumber, selfNumber: 1, modalPresentationStyle: .fullScreen))
+        Router.movePageByPush(from: self, to: CommonBraverViewController(selfNumber: selfNumber + 1, player: Player(name:"Player\(selfNumber + 1)" , order: selfNumber + 1)))
     }
 }

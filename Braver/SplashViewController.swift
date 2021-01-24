@@ -36,7 +36,7 @@ class SplashViewController: UIViewController {
     @objc func doMove(){
         Router.showActionSheet(viewController:self,brAlertControler:
                                 BRAlertController()
-                                .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue)
+                                .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue, service: DoRankService())
                                 .addAction(from: self, title: "3人")
                                 .addAction(from: self,title: "4人")
                                 .addAction(from: self,title: "5人")

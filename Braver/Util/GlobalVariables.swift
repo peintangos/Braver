@@ -27,5 +27,5 @@ class GlobalValiables {
 //    ゲームに必要な変数を宣言します。
     var totalPlayerNumber:Int!
 //    プレイヤーのリストを宣言します（配列そのものは初期化は人数を選択した時に行います。）
-    var players:Array<Player>!
+    var players:Array<Player> = Array<Player>()
 }

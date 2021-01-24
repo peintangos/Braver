@@ -140,13 +140,16 @@ class CommonBraverViewController :BaseViewController{
         }
         @objc func doMove(){
 //            画面遷移する際に、最終的に選択したスコアを格納する(Plyaerのscore要素だけは決まっていないことに注意)
-            service.setSelctedNumber(index: selfNumber, selectedNumber: selectedNumber)
+            service.setSelctedNumber(index: self.selfNumber - 1, selectedNumber: Int(input.value))
             
             if self.selfNumber < global.totalPlayerNumber {
                 let nextNumber = selfNumber + 1
-                Router.movePageByPush(from: self, to: CommonBraverViewController(selfNumber: nextNumber,player: global.players[nextNumber]))
+                Router.movePageByPush(from: self, to: CommonBraverViewController(selfNumber: nextNumber,player: global.players[nextNumber - 2]))
             }else {
-                service.doRank()
+                service.doRank().forEach { (player) in
+                    print("絶対値\(player.absoluteValue)")
+                    print("選択した数字\(player.selectedNumber)")
+                }
                 self.dismiss(animated: true, completion: nil)
                 Router.movePageByModal(from: self.presentingViewController!, to: ResultViewController(modalPresentationStyle: .fullScreen))
             }

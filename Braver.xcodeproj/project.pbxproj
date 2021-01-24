@@ -11,6 +11,7 @@
 		0F529BC125BD50C9001EBAD6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BC025BD50C9001EBAD6 /* ResultViewController.swift */; };
 		0F529BC625BD781B001EBAD6 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BC525BD781B001EBAD6 /* RankingCell.swift */; };
 		0F529BCC25BD7F5D001EBAD6 /* DoRankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BCB25BD7F5D001EBAD6 /* DoRankService.swift */; };
+		0F529BD725BD9314001EBAD6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BD625BD9314001EBAD6 /* Result.swift */; };
 		0F6F73BF25B2AD6000DFCB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73BE25B2AD6000DFCB25 /* AppDelegate.swift */; };
 		0F6F73C125B2AD6000DFCB25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73C025B2AD6000DFCB25 /* SceneDelegate.swift */; };
 		0F6F73C325B2AD6000DFCB25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73C225B2AD6000DFCB25 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		0F529BC025BD50C9001EBAD6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0F529BC525BD781B001EBAD6 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		0F529BCB25BD7F5D001EBAD6 /* DoRankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRankService.swift; sourceTree = "<group>"; };
+		0F529BD625BD9314001EBAD6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		0F6F73BB25B2AD6000DFCB25 /* Braver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6F73BE25B2AD6000DFCB25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F6F73C025B2AD6000DFCB25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				0FA3FE7825B42648008086E3 /* Enum */,
 				0F529BB825BD4ECC001EBAD6 /* Player.swift */,
+				0F529BD625BD9314001EBAD6 /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				0FA3FEFD25BBFB96008086E3 /* PlayerNumber.swift in Sources */,
 				0FC96EA325BD22350056D472 /* BaseViewController.swift in Sources */,
 				0FA3FF0725BC005C008086E3 /* CommonBraverNavigationController.swift in Sources */,
+				0F529BD725BD9314001EBAD6 /* Result.swift in Sources */,
 				0F529BC625BD781B001EBAD6 /* RankingCell.swift in Sources */,
 				0F529BB925BD4ECC001EBAD6 /* Player.swift in Sources */,
 				0FA3FF1125BC48A5008086E3 /* NumberInputSlider.swift in Sources */,

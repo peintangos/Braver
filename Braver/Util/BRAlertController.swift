@@ -38,7 +38,7 @@ class BRAlertController {
             
             service.addPlayers()
             
-            let rvc = CommonBraverViewController(totalPlayerNumber: global.totalPlayerNumber, selfNumber: 1, modalPresentationStyle: .fullScreen)
+            let rvc = CommonBraverViewController(selfNumber: 1, player: global.players[0])
             let vc = UINavigationController(rootViewController: rvc)
             vc.navigationBar.barTintColor = Color.yellow.getColor()
             vc.modalPresentationStyle = .fullScreen

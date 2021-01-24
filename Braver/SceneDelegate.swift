@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        guard let _ = (scene as? UIWindowScene) else { return }
         if let windowScene = scene as? UIWindowScene {
                   let window = UIWindow(windowScene: windowScene)
-//                  window.rootViewController = SplashViewController(nibName: nil, bundle: nil)
-            window.rootViewController = ResultViewController(modalPresentationStyle: .fullScreen)
+                  window.rootViewController = SplashViewController(nibName: nil, bundle: nil)
                   self.window = window
                   window.makeKeyAndVisible()
               }
