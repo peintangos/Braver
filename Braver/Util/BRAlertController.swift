@@ -9,8 +9,9 @@ import UIKit
 
 class BRAlertController {
     var alertController:UIAlertController!
+    private var service:DoRankService!
     
-    func of(title:String! = nil,titleTextColor:Color = .blue,message:String! = nil,preferredStyle:UIAlertController.Style = .actionSheet,textColor:Color = .blue,backGroundColor:Color = .blue,isDefaultBackButton:Bool = true) -> BRAlertController{
+    func of(title:String! = nil,titleTextColor:Color = .blue,message:String! = nil,preferredStyle:UIAlertController.Style = .actionSheet,textColor:Color = .blue,backGroundColor:Color = .blue,isDefaultBackButton:Bool = true,service:DoRankService!) -> BRAlertController{
         alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         alertController.view.tintColor = textColor.getColor()
         if isDefaultBackButton {
@@ -24,17 +25,29 @@ class BRAlertController {
         
 //        戻るボタンの背景色を変更
         alertController.itemBackgroundColor()
-
+        
+        self.service = service
         
         return self
     }
     
     func addAction(from:UIViewController,title:String = "",style:UIAlertAction.Style = .default) -> BRAlertController{
-        self.alertController.addAction(UIAlertAction.init(title: title, style: UIAlertAction.Style.default, handler: { (action) in
-            Router.movePageByModal(from: from, to: CommonBraverViewController(totalPlayerNumber: Int(title.dropLast())!, selfNumber: 1))
+        self.alertController.addAction(UIAlertAction.init(title: title, style: UIAlertAction.Style.default, handler: { [self] (action) in
+//            "~人"で登録しているため、最後の一文字を取り除いて、Intにする。（このやり方は本当に良くない）
+            global.totalPlayerNumber = Int(title.dropLast())!
+            
+            service.addPlayers()
+            
+            let rvc = CommonBraverViewController(totalPlayerNumber: global.totalPlayerNumber, selfNumber: 1, modalPresentationStyle: .fullScreen)
+            let vc = UINavigationController(rootViewController: rvc)
+            vc.navigationBar.barTintColor = Color.yellow.getColor()
+            vc.modalPresentationStyle = .fullScreen
+            vc.navigationItem.hidesBackButton = true
+            Router.movePageByModal(from: from, to: vc)
         }))
         return self
     }
+
 
     
     
@@ -53,7 +66,7 @@ class BRAlertController {
 
 
 
-extension UIAlertController {
+private extension UIAlertController {
     func itemBackgroundColor() {
         // ここでキャンセルボタンの背景色を変更
         if let cancelBackgroundViewType = NSClassFromString("_UIAlertControlleriOSActionSheetCancelBackgroundView") as? UIView.Type {
@@ -62,7 +75,7 @@ extension UIAlertController {
     }
 }
 
-extension UIView {
+private extension UIView {
     private struct AssociatedKey {
         static var subviewsBackgroundColor = "subviewsBackgroundColor"
     }

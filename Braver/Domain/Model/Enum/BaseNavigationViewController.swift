@@ -8,23 +8,31 @@
 import UIKit
 
 /**
- 起動画面以外のすべての画面のスーパークラス
+ ナビゲーションコントローラを継承したスーパークラス
  */
 class BaseNavigationViewController: UINavigationController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = Color.yellow.getColor()
-    }
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
+        self.view.backgroundColor = Color.yellow.getColor()
+        self.navigationBar.barTintColor = Color.yellow.getColor()
     }
-        
+    
+    override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
+        super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    override func viewDidLoad() {
+          super.viewDidLoad()
+      }
 
     /*
     // MARK: - Navigation

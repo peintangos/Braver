@@ -16,7 +16,16 @@ class GlobalValiables {
     var safeAreaTop:CGFloat?
     var safeAreaBottom:CGFloat?
     let splashTilteHeight = 160
-    
-    let maxValue:Int = 101
-
+//    UINavigationController
+    var globalNavigationController:UINavigationController!
+//    MySLiderBarに値を設定する際に、型がFloatであるため。
+    let maxValueGlobal:Float = 8.0
+//    中間の点
+    var middleValueGlobal:Int {
+        Int(maxValueGlobal / 2)
+    }
+//    ゲームに必要な変数を宣言します。
+    var totalPlayerNumber:Int!
+//    プレイヤーのリストを宣言します（配列そのものは初期化は人数を選択した時に行います。）
+    var players:Array<Player>!
 }
