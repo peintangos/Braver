@@ -60,7 +60,7 @@ class CommonBraverViewController :BaseViewController{
                 layout.height = YGValue(global.baseView!.frame.height)
                 layout.flexDirection = .column
             }
-            let titleLabel = BRLabel(text: player.name, textSize: 60, textColor: .yellow, width: global.baseView!.frame.width, height: 333, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
+            let titleLabel = BRLabel(text: "PLAYER\(selfNumber!)", textSize: 60, textColor: .yellow, width: global.baseView!.frame.width, height: 333, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
             titleLabel.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.marginTop = YGValue(32 + global.safeAreaTop!)
@@ -68,7 +68,7 @@ class CommonBraverViewController :BaseViewController{
                 layout.width = YGValue(global.baseView!.frame.width)
                 layout.height = YGValue(120)
             }
-    //        TODO なんでも良いが、textに値を入れないとYogaがスペースを認識せずに、潰れてしまう。
+    //        TODO textの値はなんでも良いが、textに値を入れないとYogaがスペースを認識せずに、潰れてしまう。
             inputNumber = BRLabel(text: "8", textSize: 108, textColor: .white, width: 0, height: 0, alpha: 1, backGroundColor: .yellow, yose: NSTextAlignment.center)
             inputNumber = BRLabel(text: "8", textSize: 108, textColor: .white, alpha: 1, backGroundColor: .yellow, yose: .center)
             inputNumber.configureLayout { (layout) in
@@ -146,12 +146,9 @@ class CommonBraverViewController :BaseViewController{
                 let nextNumber = selfNumber + 1
                 Router.movePageByPush(from: self, to: CommonBraverViewController(selfNumber: nextNumber,player: global.players[nextNumber - 2]))
             }else {
-                service.doRank().forEach { (player) in
-                    print("絶対値\(player.absoluteValue)")
-                    print("選択した数字\(player.selectedNumber)")
-                }
+                service.doRank()
                 self.dismiss(animated: true, completion: nil)
-                Router.movePageByModal(from: self.presentingViewController!, to: ResultViewController(modalPresentationStyle: .fullScreen))
+                Router.movePageByModal(from: self.presentingViewController!, to: ResultViewController(modalPresentationStyle: .fullScreen,resultList: service.doRank()))
             }
         }
 }

@@ -11,6 +11,7 @@ target 'Braver' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'YogaKit', '~> 1.5'
+  pod 'AMPopTip'
   platform :ios, '9.0'  
 
   target 'BraverTests' do
