@@ -8,10 +8,13 @@
 import Foundation
 import UIKit
 import YogaKit
+import RxCocoa
+import RxSwift
 
 class ResultViewController :BaseViewController{
     
 //    UIを宣言
+    var contentView:UIScrollView!
     var resultTitle:BRLabel!
     var rankingLabel:BRLabel!
     var rankingTableView:BRView!
@@ -20,20 +23,34 @@ class ResultViewController :BaseViewController{
     var backButton:BRButton!
     
 //     変数を宣言
-    var list:Array = Array(repeating: 100, count: 4)
+    var resultList:Array<Player>!
+//        Fixedは既に決定している高さ
+    let contentHeightFixed:Int = 780
+//        UnFixedはまだ決定していない高さ
+    var contentHeightUnFixed:Int{
+        return 60 * (resultList.count + 1)
+    }
+    
+    let dispose = DisposeBag()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.modalPresentationStyle = .fullScreen
         doLayout()
+        doRouter()
     }
-    init(modalPresentationStyle:UIModalPresentationStyle) {
+    init(modalPresentationStyle:UIModalPresentationStyle, resultList:Array<Player>) {
         super.init()
         self.modalPresentationStyle = modalPresentationStyle
+        self.resultList = resultList
     }
     override func viewDidAppear(_ animated: Bool) {
         doAnimation()
+        doContentReSize()
+    }
+    func doContentReSize(){
+        self.contentView.contentSize.height = CGFloat(contentHeightFixed + contentHeightUnFixed)
     }
     
     required init?(coder: NSCoder) {
@@ -41,9 +58,9 @@ class ResultViewController :BaseViewController{
     }
     func doLayout(){
 //        let contentView = BRView(backgroundColor: .yellow)
-        let contentView = UIScrollView()
+        contentView = UIScrollView()
 //        ContentSizeは意図的に設定する必要がある。（セーフエリアなどもろもろ計算する）
-        contentView.contentSize = CGSize(width:self.view.frame.width, height:2000)
+        contentView.contentSize = CGSize(width:self.view.frame.width, height:780)
         contentView.configureLayout { (layout) in
             layout.isEnabled = true
 //            layout.overflow = .scroll
@@ -72,27 +89,29 @@ class ResultViewController :BaseViewController{
         }
         
         rankingTableView = BRView(backgroundColor: .white,alpha: 0)
-        rankingTableView.configureLayout { (layout) in
+        rankingTableView.configureLayout { [self] (layout) in
             layout.isEnabled = true
-            layout.height = YGValue(300)
+            layout.height = YGValue(integerLiteral: 60 * (resultList.count + 1))
             layout.width = YGValue(self.view.frame.width)
         }
-        let rankingHeaderView = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "順位", upperLeftViewRightLabel: "名前", upperRightViewRighLabel: "スコア", bottomLeftViewRihtLabel: "選択した数字", bottomRightViewLeftLabel: "被り", bottomRightViewRightLabel: "真ん中")
+        let rankingHeaderView = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "順位", upperLeftViewRightLabel: "名前", upperRightViewRighLabel: "真ん中との差", bottomLeftViewRihtLabel: "選択した数字", bottomRightViewLeftLabel: "被り", bottomRightViewRightLabel: "真ん中")
         rankingTableView.addSubview(rankingHeaderView)
-        list.forEach { index in
-            let rankingCell = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "1位", upperLeftViewRightLabel: "松尾", upperRightViewRighLabel: "3", bottomLeftViewRihtLabel: "e", bottomRightViewLeftLabel: "e", bottomRightViewRightLabel: "d")
+        resultList.forEach { eachResult in
+            let rankingCell = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "\(eachResult.result.order!)位", upperLeftViewRightLabel: eachResult.name, upperRightViewRighLabel: String(eachResult.result.absoluteValue), bottomLeftViewRihtLabel: String(eachResult.result.selectedNumber!), bottomRightViewLeftLabel: eachResult.result.isOverLappedDisplay, bottomRightViewRightLabel: String(eachResult.result.isMiddleDisplay))
             rankingTableView.addSubview(rankingCell)
         }
-        barLabel = BRLabel(text: "Bar", textSize: 24, textColor: .yellow,alpha: 0)
+        barLabel = BRLabel(text: "Bar", textSize: 24, textColor: .yellow,alpha: 0,backGroundColor: .white)
         barLabel.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(60)
             layout.width = YGValue(self.view.frame.width)
+            layout.marginTop = 32
+            layout.marginBottom = 32
         }
-        barTableView = BRView(backgroundColor: .blue,alpha: 0)
+        barTableView = RankingNumberLine(backgroundColor: .blue,maxValue: Int(global.maxValueGlobal), alpha: 0,list:self.resultList)
         barTableView.configureLayout { (layout) in
             layout.isEnabled = true
-            layout.height = YGValue(120)
+            layout.height = YGValue(200)
             layout.width = YGValue(self.view.frame.width)
             layout.marginBottom = YGValue(32)
         }
@@ -145,7 +164,11 @@ class ResultViewController :BaseViewController{
         } completion: { _ in
             self.backButton.alpha = 1
         }
-        
-
+    }
+    func doRouter(){
+        self.backButton.addTarget(self, action: #selector(goBack), for: UIControl.Event.touchUpInside)
+    }
+    @objc func goBack(){
+        self.dismiss(animated: true, completion: nil)
     }
 }

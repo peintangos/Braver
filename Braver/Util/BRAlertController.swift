@@ -35,9 +35,9 @@ class BRAlertController {
         self.alertController.addAction(UIAlertAction.init(title: title, style: UIAlertAction.Style.default, handler: { [self] (action) in
 //            "~人"で登録しているため、最後の一文字を取り除いて、Intにする。（このやり方は本当に良くない）
             global.totalPlayerNumber = Int(title.dropLast())!
-            
+//            本当は、ここで毎回初期化するのはよくない。ライフサイクルと一致しているべきなのでゲームごとに設定したりするべき。
+            global.players = Array<Player>()
             service.addPlayers()
-            
             let rvc = CommonBraverViewController(selfNumber: 1, player: global.players[0])
             let vc = UINavigationController(rootViewController: rvc)
             vc.navigationBar.barTintColor = Color.yellow.getColor()

@@ -9,13 +9,15 @@ import Foundation
 
 class DoRankService {
     func doRank() -> Array<Player>{
-        let copyPlayers = global.players
+        let copyPlayers = self.copy(originanPlayer: global.players)
         global.players.forEach { (player) in
             let result = Result(index: player.order, selectedNumber: player.selectedNumber,isOverLapeed: self.isOverLapped(player: player, copyPlayer: copyPlayers))
             player.result = result
         }
+        
         var overLappedPlayers = Array<Player>()
         var nonOverLappedPlayers = Array<Player>()
+        
         global.players.forEach { (player) in
             if player.result.isOverLapeed! {
                 overLappedPlayers.append(player)
@@ -24,13 +26,23 @@ class DoRankService {
             }
         }
         overLappedPlayers.sort { (player1, player2) -> Bool in
-            return player1.result.absoluteValue < player2.result.absoluteValue
+            return player1.result.absoluteValue > player2.result.absoluteValue
         }
         nonOverLappedPlayers.sort { (player1, player2) -> Bool in
             return player1.result.absoluteValue < player2.result.absoluteValue
         }
         nonOverLappedPlayers.append(contentsOf: overLappedPlayers)
         
+        for (index, value) in zip(nonOverLappedPlayers.indices, nonOverLappedPlayers){
+            if index == 0{
+                value.result.order = 1
+            }else if value.result.absoluteValue == nonOverLappedPlayers[index - 1].result.absoluteValue && value.result.isOverLapeed! == value.result.isOverLapeed!{
+                value.result.order = nonOverLappedPlayers[index - 1].result.order
+            }else {
+                value.result.order = index + 1
+            }
+        }
+
         return nonOverLappedPlayers
     }
     func addPlayers(){
@@ -44,10 +56,20 @@ class DoRankService {
     private func isOverLapped(player:Player,copyPlayer:Array<Player>) ->Bool{
         var count = 0
         copyPlayer.forEach { (copyPlayer) in
-            if copyPlayer.absoluteValue == player.absoluteValue{
+            if copyPlayer.selectedNumber == player.selectedNumber{
             count += 1
             }
         }
         return count >= 2
+    }
+    private func copy(originanPlayer:Array<Player>) -> Array<Player>{
+        var copyPlayers = Array<Player>()
+        originanPlayer.forEach { (player) in
+            var copyPlayer = player
+            var result = player.result
+            copyPlayer.result = result
+            copyPlayers.append(copyPlayer)
+        }
+        return copyPlayers
     }
 }
