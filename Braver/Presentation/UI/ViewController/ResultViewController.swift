@@ -63,20 +63,19 @@ class ResultViewController :BaseViewController{
         contentView.contentSize = CGSize(width:self.view.frame.width, height:780)
         contentView.configureLayout { (layout) in
             layout.isEnabled = true
-//            layout.overflow = .scroll
             layout.width = YGValue(self.view.frame.width)
             layout.height = YGValue(self.view.frame.height)
             layout.flexDirection = .column
-//            layout.justifyContent = .center
         }
         resultTitle = BRLabel(text: "RESULT", textSize: 60, textColor: .yellow,backGroundColor: .blue)
-        resultTitle.configureLayout { (layout) in
+        resultTitle.configureLayout { [self] (layout) in
             layout.isEnabled = true
             layout.width = YGValue(self.view.frame.width)
             layout.height = YGValue(120)
             layout.position = .absolute
 //            aboluteをつけると、Yogaのレイアウトを無視できることがわかった。
-            layout.marginTop = 184
+            layout.marginTop = YGValue(32 + global.safeAreaTop! + 120)
+//            layout.marginTop = YGValue(global.safeAreaTop! + 264 + CGFloat(contentHeightUnFixed) + 416)
         }
         resultTitle.center = contentView.center
         rankingLabel = BRLabel(text:"Ranking", textSize: 24, textColor: .yellow,alpha: 0, backGroundColor: .white)
@@ -84,9 +83,12 @@ class ResultViewController :BaseViewController{
             layout.isEnabled = true
             layout.height = YGValue(48)
             layout.width = YGValue(self.view.frame.width)
-            layout.marginTop = YGValue(216)
+//            layout.marginTop = YGValue(216)
             layout.marginBottom = YGValue(32)
+//           .absoluteを2つ以上つけると狂う
 //            layout.position = .absolute
+//            そして、一つ上の項目で.absolteを使用するとスペースを認識しなくなるので、絶対値の高さが必要になる。
+            layout.marginTop = YGValue(184 + global.safeAreaTop!)
         }
         
         rankingTableView = BRView(backgroundColor: .white,alpha: 0)
@@ -105,7 +107,7 @@ class ResultViewController :BaseViewController{
         barLabel = BRLabel(text: "Bar", textSize: 24, textColor: .yellow,alpha: 0,backGroundColor: .white)
         barLabel.configureLayout { (layout) in
             layout.isEnabled = true
-            layout.height = YGValue(60)
+            layout.height = YGValue(48)
             layout.width = YGValue(self.view.frame.width)
             layout.marginTop = 32
             layout.marginBottom = 32
@@ -118,7 +120,7 @@ class ResultViewController :BaseViewController{
             layout.width = YGValue(self.view.frame.width)
             layout.marginBottom = YGValue(32)
         }
-        backButton = BRButton(backgroundColor: .white, textColor: .blue, text: "BACK", textSize: 60, alpha: 0)
+        backButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "BACK", textSize: 60, alpha: 0)
         backButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(120)
@@ -137,12 +139,14 @@ class ResultViewController :BaseViewController{
     
     func doAnimation(){
         UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.init()) { [self] in
-            let move = 122
+            let move = 120
+//            let moveResult = 264 + CGFloat(contentHeightUnFixed) + 416 - 32
             resultTitle.center.y -= CGFloat(move)
             resultTitle.alpha = 1
         } completion: { _ in
             self.resultTitle.alpha = 1
         }
+        
         UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.rankingLabel.alpha = 1
         } completion: { _ in

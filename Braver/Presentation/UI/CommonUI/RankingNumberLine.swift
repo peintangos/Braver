@@ -116,7 +116,7 @@ class RankingNumberLine :BRView {
                 }
 //            Yogaを使うと少しめんどくさそうなので、地道にframeを突っ込んだ。
 //            数字のラベルを作ります。ただし、minとmaxとmiddleは大きさを変えているのでそこだけ上書きしないようにする
-            if $0.value[0].selectedNumber! != minValue || $0.value[0].selectedNumber! != maxValue || $0.value[0].selectedNumber! != middleValue{
+            if !($0.value[0].selectedNumber == minValue || $0.value[0].selectedNumber == maxValue || $0.value[0].selectedNumber == middleValue) {
                 var numberLabel = BRLabel(text: String($0.value[0].selectedNumber!), textSize: 16, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
                 numberLabel.frame = CGRect(x: playerSelectedNumberLabel, y: Int(centerSixteenUpperFirstY), width: 16, height: 24)
                 numberLabel.center.x = CGFloat(playerSelectedNumberLabel)

@@ -12,4 +12,5 @@ import RxSwift
 
 class NumberInputSliderViewModel {
     let valueBehaviorSubject = BehaviorSubject<Int>(value: (Int(global.maxValueGlobal + 1 ) / 2))
+    
 }
