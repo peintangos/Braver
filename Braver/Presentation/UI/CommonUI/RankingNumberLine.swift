@@ -62,7 +62,7 @@ class RankingNumberLine :BRView {
         let centerEightBottomFirstY = (rect.maxY / 8 ) * 5
         let centerEightBottomSecondY = (rect.maxY / 8) * 6
         let centerEightBottomThidY = (rect.maxY / 8) * 7
-//        微調整に使う(1/16)
+//        微調整に使います(1/16)
         let centerSixteenUpperFirstY = (rect.maxY / 16 ) * 9
         let centerX = rect.midX
         let centerY = rect.midY
@@ -76,16 +76,22 @@ class RankingNumberLine :BRView {
         path.addLine(to: CGPoint(x: rightTopX, y: rect.midY))
         path.close()
         
-//        真ん中の縦線を描きます。
-        path.move(to: CGPoint(x: centerQuarterTopX, y: centerQuaterTopY))
-        path.addLines(to: [CGPoint(x: centerQuarterBottomX, y: centerQuaterBottomY)])
-        path.close()
+//        真ん中の縦線を描きます。→少しずれるのでやめた。
+//        path.move(to: CGPoint(x: centerX, y: centerEightUpperThirdY))
+//        path.addLines(to: [CGPoint(x: centerX, y: centerEightBottomFirstY)])
+//        path.close()
         
 //        左側の最小ラベルを作成します。
         var numberLabelMin = BRLabel(text: String(minValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMin.frame = CGRect(x: Int(realLeftCenterX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
         numberLabelMin.center.x = CGFloat(realLeftCenterX)
         self.addSubview(numberLabelMin)
+        
+//        真ん中の最小ラベルを作成します。
+        var numberLabelMiddle = BRLabel(text: String(middleValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        numberLabelMiddle.frame = CGRect(x: Int(centerX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
+        numberLabelMiddle.center.x = CGFloat(centerX)
+        self.addSubview(numberLabelMiddle)
     
 //        右側の最大ラベルと作成します。
         var numberLabelMax = BRLabel(text: String(maxValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
@@ -95,12 +101,12 @@ class RankingNumberLine :BRView {
 
 //        ここのスコアを数直線上に描画していきます。
         var inTurns:Bool = true
+//        同じスコアごとにグループングし、スコア対プレイヤーが1対多になるようにします。
         let dictionary = Dictionary.init(grouping: list) { (p) -> Int in
             return p.selectedNumber!
         }
         dictionary.sorted { $0.key < $1.0}.forEach {
                 var playerSelectedNumberLabel = (Int(rect.maxX) / maxValue) * $0.value[0].selectedNumber!
-                var startPoint = CGPoint()
 //                数直線を左右10ptずつ離れたた所に設定しているため、値を少し修正
                 if playerSelectedNumberLabel == minValue {
                     playerSelectedNumberLabel = Int(realLeftCenterX)
@@ -108,20 +114,19 @@ class RankingNumberLine :BRView {
                 if playerSelectedNumberLabel == maxValue {
                     playerSelectedNumberLabel = Int(realRightCenterX)
                 }
-    //            Yogaを使うと少しめんどくさそうなので、地道にframeを突っ込んだ。
-//            数字のラベルを作ります。ただし、minとmaxは大きさを変えているのでそこだけ上書きしないようにする
-            var playersName = ""
-            if $0.value[0].selectedNumber! != minValue && $0.value[0].selectedNumber! != maxValue {
+//            Yogaを使うと少しめんどくさそうなので、地道にframeを突っ込んだ。
+//            数字のラベルを作ります。ただし、minとmaxとmiddleは大きさを変えているのでそこだけ上書きしないようにする
+            if $0.value[0].selectedNumber! != minValue || $0.value[0].selectedNumber! != maxValue || $0.value[0].selectedNumber! != middleValue{
                 var numberLabel = BRLabel(text: String($0.value[0].selectedNumber!), textSize: 16, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
                 numberLabel.frame = CGRect(x: playerSelectedNumberLabel, y: Int(centerSixteenUpperFirstY), width: 16, height: 24)
                 numberLabel.center.x = CGFloat(playerSelectedNumberLabel)
                 self.addSubview(numberLabel)
-                
-                for (index, player) in zip($0.value.indices, $0.value) {
-                    playersName += "\(player.name!)"
-                    if index != $0.value.count - 1 {
-                        playersName += "\n"
-                    }
+            }
+            var playersName = ""
+            for (index, player) in zip($0.value.indices, $0.value) {
+                playersName += "\(player.name!)"
+                if index != $0.value.count - 1 {
+                    playersName += "\n"
                 }
             }
             let popTip = PopTip()
@@ -129,6 +134,7 @@ class RankingNumberLine :BRView {
             popTip.textColor = Color.yellow.getColor()
             popTip.tintColor = Color.white.getColor()
             popTip.bubbleColor = Color.white.getColor()
+            
 //            真ん中より大きいかどうかで三角形の位置を決めます。
             if $0.value[0].selectedNumber! < middleValue {
                 popTip.arrowOffset = 15

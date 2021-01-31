@@ -86,6 +86,7 @@ class ResultViewController :BaseViewController{
             layout.width = YGValue(self.view.frame.width)
             layout.marginTop = YGValue(216)
             layout.marginBottom = YGValue(32)
+//            layout.position = .absolute
         }
         
         rankingTableView = BRView(backgroundColor: .white,alpha: 0)
@@ -93,6 +94,7 @@ class ResultViewController :BaseViewController{
             layout.isEnabled = true
             layout.height = YGValue(integerLiteral: 60 * (resultList.count + 1))
             layout.width = YGValue(self.view.frame.width)
+//            layout.position = .absolute
         }
         let rankingHeaderView = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "順位", upperLeftViewRightLabel: "名前", upperRightViewRighLabel: "真ん中との差", bottomLeftViewRihtLabel: "選択した数字", bottomRightViewLeftLabel: "被り", bottomRightViewRightLabel: "真ん中")
         rankingTableView.addSubview(rankingHeaderView)
@@ -107,6 +109,7 @@ class ResultViewController :BaseViewController{
             layout.width = YGValue(self.view.frame.width)
             layout.marginTop = 32
             layout.marginBottom = 32
+//            layout.position = .absolute
         }
         barTableView = RankingNumberLine(backgroundColor: .blue,maxValue: Int(global.maxValueGlobal), alpha: 0,list:self.resultList)
         barTableView.configureLayout { (layout) in
@@ -120,6 +123,7 @@ class ResultViewController :BaseViewController{
             layout.isEnabled = true
             layout.height = YGValue(120)
             layout.width = YGValue(self.view.frame.width)
+//            layout.position = .absolute
         }
         view.addSubview(contentView)
         contentView.addSubview(resultTitle)
@@ -132,34 +136,34 @@ class ResultViewController :BaseViewController{
     }
     
     func doAnimation(){
-        UIView.animate(withDuration: 3, delay: 0, options: UIView.AnimationOptions.init()) { [self] in
+        UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.init()) { [self] in
             let move = 122
             resultTitle.center.y -= CGFloat(move)
             resultTitle.alpha = 1
         } completion: { _ in
             self.resultTitle.alpha = 1
         }
-        UIView.animate(withDuration: 1, delay: 2, options: UIView.AnimationOptions.init()) {
+        UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.rankingLabel.alpha = 1
         } completion: { _ in
             self.rankingLabel.alpha = 1
         }
-        UIView.animate(withDuration: 1, delay: 2, options: UIView.AnimationOptions.init()) {
+        UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.rankingTableView.alpha = 1
         } completion: { _ in
             self.rankingTableView.alpha = 1
         }
-        UIView.animate(withDuration: 1, delay: 2, options: UIView.AnimationOptions.init()) {
+        UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.barLabel.alpha = 1
         } completion: { _ in
             self.barLabel.alpha = 1
         }
-        UIView.animate(withDuration: 1, delay: 2, options: UIView.AnimationOptions.init()) {
+        UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.barTableView.alpha = 1
         } completion: { _ in
             self.barTableView.alpha = 1
         }
-        UIView.animate(withDuration: 1, delay: 2, options: UIView.AnimationOptions.init()) {
+        UIView.animate(withDuration: 1, delay: 1, options: UIView.AnimationOptions.init()) {
             self.backButton.alpha = 1
         } completion: { _ in
             self.backButton.alpha = 1
