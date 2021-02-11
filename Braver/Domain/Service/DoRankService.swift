@@ -25,23 +25,40 @@ class DoRankService {
                 nonOverLappedPlayers.append(player)
             }
         }
-        overLappedPlayers.sort { (player1, player2) -> Bool in
-            return player1.result.absoluteValue > player2.result.absoluteValue
-        }
+//        2STEPある。
+//        ①単純に絶対値で並び替える
+//        ②順位付けをする
+//        1.被ってない方の並び替え
         nonOverLappedPlayers.sort { (player1, player2) -> Bool in
             return player1.result.absoluteValue < player2.result.absoluteValue
         }
-        nonOverLappedPlayers.append(contentsOf: overLappedPlayers)
+//        2.被ってない方の順位付け
         
         for (index, value) in zip(nonOverLappedPlayers.indices, nonOverLappedPlayers){
             if index == 0{
                 value.result.order = 1
-            }else if value.result.absoluteValue == nonOverLappedPlayers[index - 1].result.absoluteValue && value.result.isOverLapeed! == value.result.isOverLapeed!{
+            }else if value.result.absoluteValue == nonOverLappedPlayers[index - 1].result.absoluteValue{
                 value.result.order = nonOverLappedPlayers[index - 1].result.order
             }else {
                 value.result.order = index + 1
             }
         }
+//        3.被っている方の並び替え
+        overLappedPlayers.sort { (player1, player2) -> Bool in
+            return player1.result.absoluteValue > player2.result.absoluteValue
+        }
+//        4.被っている方の順位づけ
+        for (index, value) in zip(overLappedPlayers.indices, overLappedPlayers){
+            if index == 0{
+                value.result.order = 1 + nonOverLappedPlayers.count
+            }else if value.result.absoluteValue == overLappedPlayers[index - 1].result.absoluteValue{
+                value.result.order = overLappedPlayers[index - 1].result.order
+            }else {
+                value.result.order = index + 1 + nonOverLappedPlayers.count
+            }
+        }
+        
+        nonOverLappedPlayers.append(contentsOf: overLappedPlayers)
 
         return nonOverLappedPlayers
     }
@@ -71,5 +88,21 @@ class DoRankService {
             copyPlayers.append(copyPlayer)
         }
         return copyPlayers
+    }
+    func addZeroMediumLargeNumbers(maxValue:Int){
+        var maxNumberReal:Int
+        switch maxValue {
+        case 0...5:
+            maxNumberReal = 8
+        case 6...7:
+            maxNumberReal = 10
+        case 8...9:
+            maxNumberReal = 12
+        case 10:
+            maxNumberReal = 12
+        default:
+            maxNumberReal = 8
+        }
+        global.numberList = [0,maxNumberReal / 2,maxNumberReal]
     }
 }

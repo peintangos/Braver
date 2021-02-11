@@ -38,6 +38,7 @@ class BRAlertController {
 //            本当は、ここで毎回初期化するのはよくない。ライフサイクルと一致しているべきなのでゲームごとに設定したりするべき。
             global.players = Array<Player>()
             service.addPlayers()
+            service.addZeroMediumLargeNumbers(maxValue: global.totalPlayerNumber)
             let rvc = CommonBraverViewController(selfNumber: 1, player: global.players[0])
             let vc = UINavigationController(rootViewController: rvc)
             vc.navigationBar.barTintColor = Color.yellow.getColor()
