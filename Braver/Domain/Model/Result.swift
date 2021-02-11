@@ -16,10 +16,10 @@ class Result{
     var selectedNumber:Int?
     var order:Int?
     var absoluteValue:Int {
-        return abs(selectedNumber! - global.middleValueGlobal)
+        return abs(selectedNumber! - global.numberList[1])
     }
     var isMiddleDisplay:String{
-        return selectedNumber == global.middleValueGlobal ? "○" : "×"
+        return selectedNumber == global.numberList[1] ? "○" : "×"
     }
     var isOverLappedDisplay:String{
         return self.isOverLapeed! ? "○" : "×"

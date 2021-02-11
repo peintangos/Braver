@@ -95,10 +95,12 @@ class CommonBraverViewController :BaseViewController{
                 layout.flexDirection = .row
                 layout.justifyContent = .spaceBetween
             }
-            memoriList.forEach { (number) in
+            global.numberList.forEach { (number) in
                 let number = BRLabel(text: String(number), textSize: 48, textColor: .white)
                 number.configureLayout { (layout) in
                     layout.isEnabled = true
+                    layout.width = YGValue(64)
+                    layout.height = YGValue(64)
                 }
                 memoriView.addSubview(number)
             }

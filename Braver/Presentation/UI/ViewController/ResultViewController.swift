@@ -113,7 +113,7 @@ class ResultViewController :BaseViewController{
             layout.marginBottom = 32
 //            layout.position = .absolute
         }
-        barTableView = RankingNumberLine(backgroundColor: .blue,maxValue: Int(global.maxValueGlobal), alpha: 0,list:self.resultList)
+        barTableView = RankingNumberLine(backgroundColor: .blue,maxValue: global.numberList[2], alpha: 0,list:self.resultList)
         barTableView.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(200)

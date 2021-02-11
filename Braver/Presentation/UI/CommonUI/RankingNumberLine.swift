@@ -9,15 +9,9 @@ import Foundation
 import UIKit
 import AMPopTip
 class RankingNumberLine :BRView {
-    var maxValue:Int!
-    var minValue:Int!
-    var middleValue:Int!
     var list:Array<Player>!
     init(backgroundColor:Color,minValue:Int = 0,maxValue:Int,alpha:CGFloat,list:Array<Player>) {
         super.init(backgroundColor:backgroundColor,alpha: alpha)
-        self.minValue = minValue
-        self.maxValue = maxValue
-        self.middleValue = maxValue / 2
         self.list = list
     }
     
@@ -41,8 +35,10 @@ class RankingNumberLine :BRView {
         let rightBottomX = rect.maxX
         let rightBottomY = rect.maxY
 //        少し余白を開けるために、実際はこちらを使う
-        let realRightTopX =  rect.maxX - 10
-        let realRightCenterX = rect.maxX  - 10
+//        二桁の時に見切れないようにするために、
+        let realRightTopX =  rect.maxX - 20
+//        二桁の時に見切れないようにするために、
+        let realRightCenterX = rect.maxX  - 20
         let realRightBottomX = rect.maxX  - 10
 //        真ん中部分です
         let centerTopX = rect.midX
@@ -82,20 +78,20 @@ class RankingNumberLine :BRView {
 //        path.close()
         
 //        左側の最小ラベルを作成します。
-        var numberLabelMin = BRLabel(text: String(minValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
-        numberLabelMin.frame = CGRect(x: Int(realLeftCenterX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
+        var numberLabelMin = BRLabel(text: String(global.numberList[0]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        numberLabelMin.frame = CGRect(x: Int(realLeftCenterX), y: Int(centerSixteenUpperFirstY), width: 28, height: 24)
         numberLabelMin.center.x = CGFloat(realLeftCenterX)
         self.addSubview(numberLabelMin)
         
 //        真ん中の最小ラベルを作成します。
-        var numberLabelMiddle = BRLabel(text: String(middleValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        var numberLabelMiddle = BRLabel(text: String(global.numberList[1]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMiddle.frame = CGRect(x: Int(centerX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
         numberLabelMiddle.center.x = CGFloat(centerX)
         self.addSubview(numberLabelMiddle)
     
 //        右側の最大ラベルと作成します。
-        var numberLabelMax = BRLabel(text: String(maxValue), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
-        numberLabelMax.frame = CGRect(x: Int(realRightCenterX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
+        var numberLabelMax = BRLabel(text: String(global.numberList[2]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        numberLabelMax.frame = CGRect(x: Int(realRightCenterX), y: Int(centerSixteenUpperFirstY), width: 28, height: 24)
         numberLabelMax.center.x = CGFloat(realRightCenterX)
         self.addSubview(numberLabelMax)
 
@@ -106,17 +102,17 @@ class RankingNumberLine :BRView {
             return p.selectedNumber!
         }
         dictionary.sorted { $0.key < $1.0}.forEach {
-                var playerSelectedNumberLabel = (Int(rect.maxX) / maxValue) * $0.value[0].selectedNumber!
+                var playerSelectedNumberLabel = (Int(rect.maxX) / global.numberList[2]) * $0.value[0].selectedNumber!
 //                数直線を左右10ptずつ離れたた所に設定しているため、値を少し修正
-                if playerSelectedNumberLabel == minValue {
+                if playerSelectedNumberLabel == global.numberList[0] {
                     playerSelectedNumberLabel = Int(realLeftCenterX)
                 }
-                if playerSelectedNumberLabel == maxValue {
+                if playerSelectedNumberLabel == global.numberList[2] {
                     playerSelectedNumberLabel = Int(realRightCenterX)
                 }
 //            Yogaを使うと少しめんどくさそうなので、地道にframeを突っ込んだ。
 //            数字のラベルを作ります。ただし、minとmaxとmiddleは大きさを変えているのでそこだけ上書きしないようにする
-            if !($0.value[0].selectedNumber == minValue || $0.value[0].selectedNumber == maxValue || $0.value[0].selectedNumber == middleValue) {
+            if !($0.value[0].selectedNumber == global.numberList[0] || $0.value[0].selectedNumber == global.numberList[2] || $0.value[0].selectedNumber == global.numberList[1]) {
                 var numberLabel = BRLabel(text: String($0.value[0].selectedNumber!), textSize: 16, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
                 numberLabel.frame = CGRect(x: playerSelectedNumberLabel, y: Int(centerSixteenUpperFirstY), width: 16, height: 24)
                 numberLabel.center.x = CGFloat(playerSelectedNumberLabel)
@@ -136,14 +132,15 @@ class RankingNumberLine :BRView {
             popTip.bubbleColor = Color.white.getColor()
             
 //            真ん中より大きいかどうかで三角形の位置を決めます。
-            if $0.value[0].selectedNumber! < middleValue {
+            if $0.value[0].selectedNumber! < global.numberList[1] {
                 popTip.arrowOffset = 15
-            }else if $0.value[0].selectedNumber! > middleValue {
+            }else if $0.value[0].selectedNumber! > global.numberList[1] {
                 popTip.bubbleOffset = -30
                 popTip.arrowOffset = -15
             }else {
 //                真ん中の想定
-                popTip.arrowOffset = 15
+                popTip.arrowOffset = 0
+                popTip.bubbleOffset = -10
             }
 //             近い距離だとかぶることがあるので、交互にします。
             if inTurns {

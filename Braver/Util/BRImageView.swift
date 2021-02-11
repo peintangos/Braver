@@ -13,6 +13,10 @@ class BRImageView: UIImageView {
         self.image = UIImage(named: name)
         self.contentMode = ContentMode.scaleAspectFill
     }
+    func setColor(color:Color){
+//        self.tintColor = color.getColor()
+//        self.backgroundColor = color.getColor()
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

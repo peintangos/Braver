@@ -13,7 +13,7 @@ class NumberInputSlider: UISlider {
         self.backgroundColor = backgroundColor.getColor()
         self.tintColor = .white
         self.minimumValue = 0
-        self.maximumValue = global.maxValueGlobal
+        self.maximumValue = Float(global.numberList[2])
 //        0始まりなので、偶数を想定している
         self.value = maximumValue / 2
     }

@@ -16,6 +16,7 @@ class SplashViewController: UIViewController {
     var startButton:BRButton!
     var splash:BRImageView!
     var titleLabel:BRLabel!
+    var settingButton:BRImageView!
     let dispose = DisposeBag()
     private let doRankService = DoRankService()
     
@@ -93,6 +94,18 @@ class SplashViewController: UIViewController {
         startButton.center = view.center
         contentView.addSubview(startButton)
         
+        self.settingButton = BRImageView(name: "settings", frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        self.settingButton.setColor(color: .blue)
+            settingButton.configureLayout { (layout) in
+                layout.isEnabled = true
+                layout.width = YGValue(40)
+                layout.height = YGValue(40)
+                layout.bottom = -250
+                layout.left = -300
+            }
+            contentView.addSubview(settingButton)
+        
+        
         view.addSubview(contentView)
 
         contentView.yoga.applyLayout(preservingOrigin: true)
@@ -137,6 +150,12 @@ class SplashViewController: UIViewController {
             self.startButton.alpha = 1
         } completion: { _ in
             self.startButton.alpha = 1
+        }
+        UIView.animate(withDuration: 3, delay: 1, options: UIView.AnimationOptions.init()) {
+            self.settingButton.alpha = 1
+            self.settingButton.center.x += 200
+        } completion: { _ in
+            self.settingButton.alpha = 1
         }
         
     }
