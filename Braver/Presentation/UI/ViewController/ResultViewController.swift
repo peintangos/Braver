@@ -21,6 +21,7 @@ class ResultViewController :BaseViewController{
     var barLabel:BRLabel!
     var barTableView:BRView!
     var backButton:BRButton!
+    var alert:UIAlertController!
     
 //     変数を宣言
     var resultList:Array<Player>!
@@ -48,6 +49,12 @@ class ResultViewController :BaseViewController{
     override func viewDidAppear(_ animated: Bool) {
         doAnimation()
         doContentReSize()
+        if DoRankService().isKingsMode(list: self.resultList) {
+//           ここの領域外タップで、閉じる動作だがここではなくBRAlertController()の中で処理を行いたいが、うまくできない。
+            alert = UIAlertController(title: "Braver👑👑", message: "おめでとうございます。", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction.init(title: "結果を見る", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     func doContentReSize(){
         self.contentView.contentSize.height = CGFloat(contentHeightFixed + contentHeightUnFixed)
@@ -178,5 +185,9 @@ class ResultViewController :BaseViewController{
     }
     @objc func goBack(){
         self.dismiss(animated: true, completion: nil)
+    }
+    @objc func closeAlert(){
+        alert.dismiss(animated: true, completion: nil)
+        alert = nil
     }
 }

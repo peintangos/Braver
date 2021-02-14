@@ -24,6 +24,7 @@ class BRLabel: UILabel {
         self.alpha = alpha
         self.backgroundColor = backGroundColor.getColor()
         self.textAlignment = yose
+        self.numberOfLines = 0
     }
     
     required init?(coder: NSCoder) {

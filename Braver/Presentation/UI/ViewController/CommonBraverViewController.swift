@@ -136,7 +136,7 @@ class CommonBraverViewController :BaseViewController{
                 .map { String($0) }
                 .bind(to: inputNumber.rx.text).disposed(by: dispose)
             
-            self.input.inputView?.rx
+//            self.input.inputView?.rx
         }
         func doRouter(){
             self.startButton.addTarget(self, action: #selector(doMove), for: UIControl.Event.touchUpInside)

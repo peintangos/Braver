@@ -16,7 +16,9 @@ class SplashViewController: UIViewController {
     var startButton:BRButton!
     var splash:BRImageView!
     var titleLabel:BRLabel!
-    var settingButton:BRImageView!
+    var settingButton:BRButton!
+    var helpButton:BRButton!
+    var bottomArea:BRView!
     let dispose = DisposeBag()
     private let doRankService = DoRankService()
     
@@ -31,10 +33,22 @@ class SplashViewController: UIViewController {
     }
     
     func doRouter(){
-        self.startButton.addTarget(self, action: #selector(doMove), for: UIControl.Event.touchUpInside)
+        self.startButton.rx.tap.subscribe { (layout) in
+            self.doMove()
+        }.disposed(by: dispose)
+        
+        self.helpButton.rx.tap.subscribe { [self] (layout) in
+            let vc = QuestionViewController()
+            vc.title = "説明画面"
+            
+            let nav = UINavigationController(rootViewController: vc)
+//            基本的に、UINavigationの設定はQuestionViewController()で行うが、modalタイプだけはこちらでで対応する。
+            nav.modalPresentationStyle = .overFullScreen
+            Router.movePageByModal(from: self, to: nav)
+        }.disposed(by: dispose)
     }
 
-    @objc func doMove(){
+    func doMove(){
         Router.showActionSheet(viewController:self,brAlertControler:
                                 BRAlertController()
                                 .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue, service: DoRankService())
@@ -94,17 +108,29 @@ class SplashViewController: UIViewController {
         startButton.center = view.center
         contentView.addSubview(startButton)
         
-        self.settingButton = BRImageView(name: "settings", frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        self.settingButton.setColor(color: .blue)
-            settingButton.configureLayout { (layout) in
+        bottomArea = BRView(backgroundColor: .yellow)
+        bottomArea.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.display = .flex
+            layout.flexDirection = .row
+            layout.justifyContent = .flexStart
+            layout.marginTop = 400
+            layout.marginLeft = 100
+            layout.width = YGValue(global.baseView!.frame.width)
+            
+        }
+
+        self.helpButton = BRButton(backgroundColor: .yellow, textColor: .yellow, text: "", alpha: 0)
+        self.helpButton.setImage(UIImage(named: "question"), for: UIControl.State.normal)
+//        self.helpButton.setShadow()
+        helpButton.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.width = YGValue(40)
                 layout.height = YGValue(40)
-                layout.bottom = -250
-                layout.left = -300
             }
-            contentView.addSubview(settingButton)
+        bottomArea.addSubview(self.helpButton)
         
+        contentView.addSubview(bottomArea)
         
         view.addSubview(contentView)
 
@@ -151,13 +177,15 @@ class SplashViewController: UIViewController {
         } completion: { _ in
             self.startButton.alpha = 1
         }
-        UIView.animate(withDuration: 3, delay: 1, options: UIView.AnimationOptions.init()) {
-            self.settingButton.alpha = 1
-            self.settingButton.center.x += 200
+        UIView.animate(withDuration: 3, delay: 2, options: UIView.AnimationOptions.init()) {
+            self.helpButton.alpha = 1
         } completion: { _ in
-            self.settingButton.alpha = 1
+            self.helpButton.alpha = 1
         }
         
+    }
+    @objc func closeModal(){
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -172,3 +200,4 @@ class SplashViewController: UIViewController {
     */
 
 }
+
