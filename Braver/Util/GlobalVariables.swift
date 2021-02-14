@@ -31,4 +31,6 @@ class GlobalValiables {
 //    TODO ↑本当はライフサイクルと合わせたほうが良い。例えば、ゲーム毎に意味のある数字なのでゲームで一位になるようにしたほうが良い。
     var numberList:Array<Int> = []
     //    TODO ↑本当はライフサイクルと合わせたほうが良い。例えば、ゲーム毎に意味のある数字なのでゲームで一位になるようにしたほうが良い。
+//    ユーザーデフォルトを設定します。
+    var defaults = UserDefaults.standard
 }
