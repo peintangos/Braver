@@ -106,9 +106,14 @@ class DoRankService {
         global.numberList = [0,maxNumberReal / 2,maxNumberReal]
     }
     func isKingsMode(list:Array<Player>) -> Bool{
-        if list[0].selectedNumber == 4 && list[1].selectedNumber != 4 {
+        if list[0].selectedNumber == 4 && list[1].selectedNumber != 4 && global.defaults.bool(forKey: "isOsama"){
             return true
         }
         return false
+    }
+    func updateUserDefaults(isOmit:Bool,isNameSaved:Bool,isOsama:Bool){
+        global.defaults.set(isNameSaved, forKey: "isOmit")
+        global.defaults.set(isOmit, forKey: "isNameSaved")
+        global.defaults.set(isOsama, forKey: "isOsama")
     }
 }
