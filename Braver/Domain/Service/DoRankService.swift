@@ -105,4 +105,10 @@ class DoRankService {
         }
         global.numberList = [0,maxNumberReal / 2,maxNumberReal]
     }
+    func isKingsMode(list:Array<Player>) -> Bool{
+        if list[0].selectedNumber == 4 && list[1].selectedNumber != 4 {
+            return true
+        }
+        return false
+    }
 }

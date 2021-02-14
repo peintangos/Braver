@@ -11,6 +11,5 @@ import RxCocoa
 import RxSwift
 class CommonBraverViewModel {
     let startButtonViewModel = BehaviorRelay(value: false)
-    
 }
 

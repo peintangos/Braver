@@ -48,7 +48,9 @@ class BRAlertController {
         }))
         return self
     }
-
+    func createAlert() -> UIAlertController{
+        return UIAlertController(title: "Braver👑👑", message: "おめでとうございます。", preferredStyle: UIAlertController.Style.alert)
+    }
 
     
     
