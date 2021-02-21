@@ -12,6 +12,7 @@
 		0F529BC625BD781B001EBAD6 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BC525BD781B001EBAD6 /* RankingCell.swift */; };
 		0F529BCC25BD7F5D001EBAD6 /* DoRankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BCB25BD7F5D001EBAD6 /* DoRankService.swift */; };
 		0F529BD725BD9314001EBAD6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F529BD625BD9314001EBAD6 /* Result.swift */; };
+		0F5BE5B725D8212E00901F69 /* RuleExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BE5B625D8212E00901F69 /* RuleExplanationViewController.swift */; };
 		0F6F73BF25B2AD6000DFCB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73BE25B2AD6000DFCB25 /* AppDelegate.swift */; };
 		0F6F73C125B2AD6000DFCB25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73C025B2AD6000DFCB25 /* SceneDelegate.swift */; };
 		0F6F73C325B2AD6000DFCB25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F73C225B2AD6000DFCB25 /* ViewController.swift */; };
@@ -34,9 +35,14 @@
 		0FA3FF0C25BC209C008086E3 /* CommonBraverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FF0B25BC209C008086E3 /* CommonBraverViewModel.swift */; };
 		0FA3FF1125BC48A5008086E3 /* NumberInputSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FF1025BC48A5008086E3 /* NumberInputSlider.swift */; };
 		0FA3FF1625BC56F5008086E3 /* NumberInputSliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3FF1525BC56F5008086E3 /* NumberInputSliderViewModel.swift */; };
+		0FA6518E25D917BD00FD5C9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6518D25D917BD00FD5C9C /* SettingsViewController.swift */; };
+		0FA6519325D91DD100FD5C9C /* BRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6519225D91DD100FD5C9C /* BRScrollView.swift */; };
+		0FA6519825D925CC00FD5C9C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6519725D925CC00FD5C9C /* SettingsViewModel.swift */; };
+		0FAB54D725D8CCDE0097A57E /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB54D625D8CCDE0097A57E /* QuestionViewController.swift */; };
 		0FB85E9825C549D500043D16 /* RankingNumberLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB85E9725C549D500043D16 /* RankingNumberLine.swift */; };
 		0FC96EA325BD22350056D472 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC96EA225BD22350056D472 /* BaseViewController.swift */; };
 		0FC96EAB25BD23450056D472 /* CommonBraverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC96EAA25BD23450056D472 /* CommonBraverViewController.swift */; };
+		0FD2E4A925DE981300BD429D /* NameSavedGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2E4A825DE981300BD429D /* NameSavedGroupViewController.swift */; };
 		1AEDE54D71EA904DB7342729 /* Pods_BraverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA26E1E0DB5CEEA751FD3D /* Pods_BraverTests.framework */; };
 		7BD3064B26F3C94CAAE0C8A7 /* Pods_Braver_BraverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A901AC049E237A551A2F2392 /* Pods_Braver_BraverUITests.framework */; };
 		C54B4C5B5F8EB906293E42B0 /* Pods_Braver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33941134907F82710A43EE56 /* Pods_Braver.framework */; };
@@ -65,6 +71,7 @@
 		0F529BC525BD781B001EBAD6 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		0F529BCB25BD7F5D001EBAD6 /* DoRankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRankService.swift; sourceTree = "<group>"; };
 		0F529BD625BD9314001EBAD6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0F5BE5B625D8212E00901F69 /* RuleExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleExplanationViewController.swift; sourceTree = "<group>"; };
 		0F6F73BB25B2AD6000DFCB25 /* Braver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Braver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6F73BE25B2AD6000DFCB25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F6F73C025B2AD6000DFCB25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,9 +100,14 @@
 		0FA3FF0B25BC209C008086E3 /* CommonBraverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonBraverViewModel.swift; path = Braver/Domain/Model/Enum/CommonBraverViewModel.swift; sourceTree = SOURCE_ROOT; };
 		0FA3FF1025BC48A5008086E3 /* NumberInputSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NumberInputSlider.swift; path = Braver/Domain/Model/Enum/NumberInputSlider.swift; sourceTree = SOURCE_ROOT; };
 		0FA3FF1525BC56F5008086E3 /* NumberInputSliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NumberInputSliderViewModel.swift; path = Braver/Domain/Model/Enum/NumberInputSliderViewModel.swift; sourceTree = SOURCE_ROOT; };
+		0FA6518D25D917BD00FD5C9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0FA6519225D91DD100FD5C9C /* BRScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRScrollView.swift; sourceTree = "<group>"; };
+		0FA6519725D925CC00FD5C9C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0FAB54D625D8CCDE0097A57E /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0FB85E9725C549D500043D16 /* RankingNumberLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingNumberLine.swift; sourceTree = "<group>"; };
 		0FC96EA225BD22350056D472 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0FC96EAA25BD23450056D472 /* CommonBraverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBraverViewController.swift; sourceTree = "<group>"; };
+		0FD2E4A825DE981300BD429D /* NameSavedGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSavedGroupViewController.swift; sourceTree = "<group>"; };
 		1E06BA9B4E671537AD878897 /* Pods-BraverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraverTests.release.xcconfig"; path = "Target Support Files/Pods-BraverTests/Pods-BraverTests.release.xcconfig"; sourceTree = "<group>"; };
 		33941134907F82710A43EE56 /* Pods_Braver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CB20DEC0C04050D0D3C3D8 /* Pods-Braver-BraverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braver-BraverUITests.release.xcconfig"; path = "Target Support Files/Pods-Braver-BraverUITests/Pods-Braver-BraverUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +281,7 @@
 			children = (
 				0FA3FF0B25BC209C008086E3 /* CommonBraverViewModel.swift */,
 				0FA3FF1525BC56F5008086E3 /* NumberInputSliderViewModel.swift */,
+				0FA6519725D925CC00FD5C9C /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,6 +301,7 @@
 				0FA3FE9625B4361E008086E3 /* BRButton.swift */,
 				0FA3FEA425B44AE4008086E3 /* BRImageView.swift */,
 				0FA3FEE225B486D1008086E3 /* BRView.swift */,
+				0FA6519225D91DD100FD5C9C /* BRScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,11 +310,15 @@
 			isa = PBXGroup;
 			children = (
 				0FA3FE7025B425E9008086E3 /* SplashViewController.swift */,
+				0FAB54D625D8CCDE0097A57E /* QuestionViewController.swift */,
 				0FA3FF0125BBFF32008086E3 /* BaseNavigationViewController.swift */,
 				0FA3FF0625BC005C008086E3 /* CommonBraverNavigationController.swift */,
 				0FC96EA225BD22350056D472 /* BaseViewController.swift */,
 				0FC96EAA25BD23450056D472 /* CommonBraverViewController.swift */,
 				0F529BC025BD50C9001EBAD6 /* ResultViewController.swift */,
+				0F5BE5B625D8212E00901F69 /* RuleExplanationViewController.swift */,
+				0FA6518D25D917BD00FD5C9C /* SettingsViewController.swift */,
+				0FD2E4A825DE981300BD429D /* NameSavedGroupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -610,6 +628,7 @@
 			files = (
 				0FA3FEA525B44AE4008086E3 /* BRImageView.swift in Sources */,
 				0FB85E9825C549D500043D16 /* RankingNumberLine.swift in Sources */,
+				0FAB54D725D8CCDE0097A57E /* QuestionViewController.swift in Sources */,
 				0FA3FE8525B4267E008086E3 /* GlobalVariables.swift in Sources */,
 				0FA3FE9725B4361E008086E3 /* BRButton.swift in Sources */,
 				0FA3FEFD25BBFB96008086E3 /* PlayerNumber.swift in Sources */,
@@ -620,17 +639,22 @@
 				0F529BB925BD4ECC001EBAD6 /* Player.swift in Sources */,
 				0FA3FF1125BC48A5008086E3 /* NumberInputSlider.swift in Sources */,
 				0FA3FE9225B42BF7008086E3 /* BRLabel.swift in Sources */,
+				0FA6519325D91DD100FD5C9C /* BRScrollView.swift in Sources */,
 				0FA3FF0225BBFF32008086E3 /* BaseNavigationViewController.swift in Sources */,
 				0FA3FEF825BBE0F9008086E3 /* Router.swift in Sources */,
 				0FA3FEEF25BBD858008086E3 /* BRAlertController.swift in Sources */,
+				0FD2E4A925DE981300BD429D /* NameSavedGroupViewController.swift in Sources */,
 				0FA3FE7A25B42650008086E3 /* Color.swift in Sources */,
+				0FA6519825D925CC00FD5C9C /* SettingsViewModel.swift in Sources */,
 				0F529BCC25BD7F5D001EBAD6 /* DoRankService.swift in Sources */,
 				0F6F73C325B2AD6000DFCB25 /* ViewController.swift in Sources */,
 				0F6F73BF25B2AD6000DFCB25 /* AppDelegate.swift in Sources */,
 				0FC96EAB25BD23450056D472 /* CommonBraverViewController.swift in Sources */,
 				0F6F73C125B2AD6000DFCB25 /* SceneDelegate.swift in Sources */,
 				0FA3FF0C25BC209C008086E3 /* CommonBraverViewModel.swift in Sources */,
+				0FA6518E25D917BD00FD5C9C /* SettingsViewController.swift in Sources */,
 				0FA3FEE325B486D1008086E3 /* BRView.swift in Sources */,
+				0F5BE5B725D8212E00901F69 /* RuleExplanationViewController.swift in Sources */,
 				0FA3FF1625BC56F5008086E3 /* NumberInputSliderViewModel.swift in Sources */,
 				0FA3FE7125B425E9008086E3 /* SplashViewController.swift in Sources */,
 				0F529BC125BD50C9001EBAD6 /* ResultViewController.swift in Sources */,
