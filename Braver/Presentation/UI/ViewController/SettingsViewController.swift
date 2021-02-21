@@ -12,12 +12,11 @@ import RxCocoa
 class SettingsViewController: BaseViewController, UITableViewDataSource,UITableViewDelegate {
     let settingsViewModel = SettingsViewModel()
     let dispose = DisposeBag()
-    var isOmitSwitch =  UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var isNameSavedSwitch =  UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var isOsamaSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,13 +26,10 @@ class SettingsViewController: BaseViewController, UITableViewDataSource,UITableV
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "名前の保存"
-            cell.accessoryView = isOmitSwitch
+            cell.accessoryView = isNameSavedSwitch
         case 1:
             cell.textLabel?.text = "名前を入力する"
         case 2:
-            cell.textLabel?.text = "名前の保存"
-            cell.accessoryView = isNameSavedSwitch
-        case 3:
             cell.textLabel?.text = "王様モード"
             cell.accessoryView = isOsamaSwitch
         default:
@@ -63,23 +59,21 @@ class SettingsViewController: BaseViewController, UITableViewDataSource,UITableV
     
     override func viewWillDisappear(_ animated: Bool) {
 //        画面を離れるときに保存する。
-        try! DoRankService().updateUserDefaults(isOmit:settingsViewModel.isNameOmittedBehaviorSubject.value(), isNameSaved: settingsViewModel.isNameSavedBehaviorSubject.value(), isOsama: settingsViewModel.isKingRuleBehaviorSubject.value())
+        try! DoRankService().updateUserDefaults(isNameSaved: settingsViewModel.isNameSavedBehaviorSubject.value(), isOsama: settingsViewModel.isKingRuleBehaviorSubject.value())
     }
 
     func doBind(){
-        self.isOmitSwitch.rx.isOn.bind(to: settingsViewModel.isNameOmittedBehaviorSubject).disposed(by: dispose)
         self.isNameSavedSwitch.rx.isOn.bind(to: settingsViewModel.isNameSavedBehaviorSubject).disposed(by: dispose)
         self.isOsamaSwitch.rx.isOn.bind(to: settingsViewModel.isKingRuleBehaviorSubject).disposed(by: dispose)
     }
     override func viewWillAppear(_ animated: Bool) {
 //        isOnを変えるのではなく、setしないと値が変わらないことに注意。あと、ここはViewModel使ってもっとうまくやる。
-        self.isOmitSwitch.setOn(global.defaults.bool(forKey: "isOmit"), animated: true)
         self.isNameSavedSwitch.setOn(global.defaults.bool(forKey: "isNameSaved"), animated: true)
         self.isOsamaSwitch.setOn(global.defaults.bool(forKey: "isOsama"), animated: true)
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1 {
             let mv = NameSavedGroupViewController()
             mv.modalPresentationStyle = .fullScreen

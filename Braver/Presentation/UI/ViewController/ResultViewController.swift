@@ -51,7 +51,7 @@ class ResultViewController :BaseViewController{
         doContentReSize()
         if DoRankService().isKingsMode(list: self.resultList) {
 //           ここの領域外タップで、閉じる動作だがここではなくBRAlertController()の中で処理を行いたいが、うまくできない。
-            alert = UIAlertController(title: "Braver👑👑", message: "おめでとうございます。", preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: "Braver👑👑", message: "おめでとうございます。\n「\(self.resultList[0].name)」さんが王様となりました。\n好きな命令をしてください👑", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction.init(title: "結果を見る", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

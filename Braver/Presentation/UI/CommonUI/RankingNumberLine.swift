@@ -22,50 +22,50 @@ class RankingNumberLine :BRView {
         let path = UIBezierPath()
 //        左側部分です
         let leftTopX = rect.minX
-        let leftTopY = rect.minY
-        let leftBottomX = rect.minX
-        let leftBottomY = rect.maxY
+        _ = rect.minY
+        _ = rect.minX
+        _ = rect.maxY
 //       　少し余白を開けるために、実際はこちらを使う
-        let realLeftTopX =  rect.minX + 10
+        _ =  rect.minX + 10
         let realLeftCenterX = rect.minX  + 10
-        let realLeftBottomX = rect.minX  + 10
+        _ = rect.minX  + 10
 //        右側部分です
         let rightTopX = rect.maxX
-        let rightTopY = rect.minY
-        let rightBottomX = rect.maxX
-        let rightBottomY = rect.maxY
+        _ = rect.minY
+        _ = rect.maxX
+        _ = rect.maxY
 //        少し余白を開けるために、実際はこちらを使う
 //        二桁の時に見切れないようにするために、
-        let realRightTopX =  rect.maxX - 20
+        _ =  rect.maxX - 20
 //        二桁の時に見切れないようにするために、
         let realRightCenterX = rect.maxX  - 20
-        let realRightBottomX = rect.maxX  - 10
+        _ = rect.maxX  - 10
 //        真ん中部分です
-        let centerTopX = rect.midX
-        let centerTopY = rect.minY
+        _ = rect.midX
+        _ = rect.minY
 //        縦の長さを4分割した位置を定義します。
-        let centerQuarterTopX = rect.midX
-        let centerQuaterTopY = rect.maxY / 4
+        _ = rect.midX
+        _ = rect.maxY / 4
 //        縦の長さを6分割した場合の位置を定義します。
-        let centerSixUpperTopY = rect.maxY / 6
-        let centerSixUpperBottomTopY = (rect.maxY / 6) * 2
-        let centerSixBottomTopY = (rect.maxY / 6 ) * 4
-        let centerSixBottomBottomY = (rect.maxY / 6) * 5
+        _ = rect.maxY / 6
+        _ = (rect.maxY / 6) * 2
+        _ = (rect.maxY / 6 ) * 4
+        _ = (rect.maxY / 6) * 5
 //        縦の長さを8分割した位置を定義します。
-        let centerEightUpperFirstY = rect.maxY / 8
-        let centerEightUpperSecondY = (rect.maxY / 8) * 2
-        let centerEightUpperThirdY = (rect.maxY / 8) * 3
-        let centerEightBottomFirstY = (rect.maxY / 8 ) * 5
-        let centerEightBottomSecondY = (rect.maxY / 8) * 6
-        let centerEightBottomThidY = (rect.maxY / 8) * 7
+        _ = rect.maxY / 8
+        _ = (rect.maxY / 8) * 2
+        _ = (rect.maxY / 8) * 3
+        _ = (rect.maxY / 8 ) * 5
+        _ = (rect.maxY / 8) * 6
+        _ = (rect.maxY / 8) * 7
 //        微調整に使います(1/16)
         let centerSixteenUpperFirstY = (rect.maxY / 16 ) * 9
         let centerX = rect.midX
         let centerY = rect.midY
-        let centerQuarterBottomX = rect.midX
-        let centerQuaterBottomY = (rect.maxY / 4 ) * 3
-        let centerBottomX = rect.midX
-        let centerBottomY = rect.maxY
+        _ = rect.midX
+        _ = (rect.maxY / 4 ) * 3
+        _ = rect.midX
+        _ = rect.maxY
         
 //        数直線を描きます。
         path.move(to: CGPoint(x: leftTopX, y: rect.midY))
@@ -78,19 +78,19 @@ class RankingNumberLine :BRView {
 //        path.close()
         
 //        左側の最小ラベルを作成します。
-        var numberLabelMin = BRLabel(text: String(global.numberList[0]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        let numberLabelMin = BRLabel(text: String(global.numberList[0]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMin.frame = CGRect(x: Int(realLeftCenterX), y: Int(centerSixteenUpperFirstY), width: 28, height: 24)
         numberLabelMin.center.x = CGFloat(realLeftCenterX)
         self.addSubview(numberLabelMin)
         
 //        真ん中の最小ラベルを作成します。
-        var numberLabelMiddle = BRLabel(text: String(global.numberList[1]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        let numberLabelMiddle = BRLabel(text: String(global.numberList[1]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMiddle.frame = CGRect(x: Int(centerX), y: Int(centerSixteenUpperFirstY), width: 24, height: 24)
         numberLabelMiddle.center.x = CGFloat(centerX)
         self.addSubview(numberLabelMiddle)
     
 //        右側の最大ラベルと作成します。
-        var numberLabelMax = BRLabel(text: String(global.numberList[2]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+        let numberLabelMax = BRLabel(text: String(global.numberList[2]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMax.frame = CGRect(x: Int(realRightCenterX), y: Int(centerSixteenUpperFirstY), width: 28, height: 24)
         numberLabelMax.center.x = CGFloat(realRightCenterX)
         self.addSubview(numberLabelMax)
@@ -113,14 +113,14 @@ class RankingNumberLine :BRView {
 //            Yogaを使うと少しめんどくさそうなので、地道にframeを突っ込んだ。
 //            数字のラベルを作ります。ただし、minとmaxとmiddleは大きさを変えているのでそこだけ上書きしないようにする
             if !($0.value[0].selectedNumber == global.numberList[0] || $0.value[0].selectedNumber == global.numberList[2] || $0.value[0].selectedNumber == global.numberList[1]) {
-                var numberLabel = BRLabel(text: String($0.value[0].selectedNumber!), textSize: 16, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
+                let numberLabel = BRLabel(text: String($0.value[0].selectedNumber!), textSize: 16, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
                 numberLabel.frame = CGRect(x: playerSelectedNumberLabel, y: Int(centerSixteenUpperFirstY), width: 16, height: 24)
                 numberLabel.center.x = CGFloat(playerSelectedNumberLabel)
                 self.addSubview(numberLabel)
             }
             var playersName = ""
             for (index, player) in zip($0.value.indices, $0.value) {
-                playersName += "\(player.name!)"
+                playersName += "\(player.name)"
                 if index != $0.value.count - 1 {
                     playersName += "\n"
                 }

@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewModel {
-    let isNameOmittedBehaviorSubject = BehaviorSubject(value: false)
     let isNameSavedBehaviorSubject = BehaviorSubject(value: false)
     let isKingRuleBehaviorSubject = BehaviorSubject(value: true)
 }

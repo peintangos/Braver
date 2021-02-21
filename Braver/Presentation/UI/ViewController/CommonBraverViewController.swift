@@ -60,7 +60,7 @@ class CommonBraverViewController :BaseViewController{
                 layout.height = YGValue(global.baseView!.frame.height)
                 layout.flexDirection = .column
             }
-            let titleLabel = BRLabel(text: "PLAYER\(selfNumber!)", textSize: 60, textColor: .yellow, width: global.baseView!.frame.width, height: 333, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
+            let titleLabel = BRLabel(text: service.getPlayerName(playerNumber:self.selfNumber), textSize: 60, textColor: .yellow, width: global.baseView!.frame.width, height: 333, alpha: 1,backGroundColor: .blue,yose:NSTextAlignment.center)
             titleLabel.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.marginTop = YGValue(32 + global.safeAreaTop!)
@@ -104,7 +104,7 @@ class CommonBraverViewController :BaseViewController{
                 }
                 memoriView.addSubview(number)
             }
-            startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "STRAT", textSize: 60, alpha: 1.0)
+            startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "BET", textSize: 60, alpha: 1.0)
             startButton.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.marginTop = 32

@@ -47,14 +47,14 @@ class RuleExplanationViewController: UIViewController {
             layout.marginRight = 20
             layout.marginLeft = 20
         }
-        let attrText2 = NSMutableAttributedString(string: explanationView1.text!)
-        attrText2.addAttributes([
-                    .foregroundColor: Color.blue.getColor(),
-                    ], range: NSMakeRange(9, 1))
-        attrText2.addAttributes([
-            .foregroundColor: Color.blue.getColor(),
-            ], range: NSMakeRange(36, 20))
-        explanationView1.attributedText = attrText2
+//        let attrText2 = NSMutableAttributedString(string: explanationView1.text!)
+//        attrText2.addAttributes([
+//                    .foregroundColor: Color.blue.getColor(),
+//                    ], range: NSMakeRange(9, 1))
+//        attrText2.addAttributes([
+//            .foregroundColor: Color.blue.getColor(),
+//            ], range: NSMakeRange(36, 20))
+//        explanationView1.attributedText = attrText2
         
         let explanationView2 = BRLabel(text: "例えば、真ん中の数字が「4」でプレイヤーが選んだ数字が「0,0,1,2,3,3,5,6」だとします。まず被っていないプレイヤー同士でランキング化されるので、「5」を選んだプレイヤーが1位、「2」と「6」を選んだプレイヤーが同率で2位、1を選んだプレイヤーが4位となります。次に、被ってしまったプレイヤー同士でランキング化されます。4から遠いほど強いので、0を選んだプレイヤーが同率で5位、3を選んだプレイヤーが同率で7位となります。", textSize: 16, textColor: Color.white,backGroundColor: .yellow,yose: .left)
         explanationView2.configureLayout { (layout) in
@@ -66,15 +66,15 @@ class RuleExplanationViewController: UIViewController {
 
         }
         let explanationView3 = BRLabel(text: " もし真ん中の数字を選び、他の誰とも被らなかった場合、特別な演出を用意してあります。是非、真ん中を狙ってみてください。", textSize: 16, textColor: Color.white,backGroundColor: .yellow,yose: .left)
-        let attrText1 = NSMutableAttributedString(string: explanationView3.text!)
-        attrText1.addAttributes([
-                    .foregroundColor: Color.blue.getColor(),
-                    ], range: NSMakeRange(3, 21))
-        attrText1.addAttributes([
-            .foregroundColor: Color.blue.getColor(),
-            ], range: NSMakeRange(27, 8))
+//        let attrText1 = NSMutableAttributedString(string: explanationView3.text!)
+//        attrText1.addAttributes([
+//                    .foregroundColor: Color.blue.getColor(),
+//                    ], range: NSMakeRange(3, 21))
+//        attrText1.addAttributes([
+//            .foregroundColor: Color.blue.getColor(),
+//            ], range: NSMakeRange(27, 8))
 
-        explanationView3.attributedText = attrText1
+//        explanationView3.attributedText = attrText1
         explanationView3.configureLayout { (layout) in
             layout.isEnabled = true
             layout.paddingTop = 20
