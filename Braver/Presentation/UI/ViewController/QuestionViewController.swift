@@ -111,7 +111,7 @@ class QuestionViewController: UIViewController {
         }.disposed(by: dispose)
         self.settingButton.rx.tap.subscribe { (layout) in
             Router.movePageByPush(from: self, to: SettingsViewController())
-        }
+        }.disposed(by: dispose)
     }
     
     @objc func closeModal(){

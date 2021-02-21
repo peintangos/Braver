@@ -30,6 +30,7 @@ class SplashViewController: UIViewController {
         doLayout()
         doAnimation()
         doRouter()
+        doRankService.initNameSave()
     }
     
     func doRouter(){

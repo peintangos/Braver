@@ -21,9 +21,7 @@ class GlobalValiables {
 //    MySLiderBarに値を設定する際に、型がFloatであるため。
     let maxValueGlobal:Float = 8.0
 //    中間の点
-    var middleValueGlobal:Int {
-        Int(maxValueGlobal / 2)
-    }
+    var middleValueGlobal:Int?
 //    ゲームに必要な変数を宣言します。
     var totalPlayerNumber:Int!
 //    プレイヤーのリストを宣言します（配列そのものは初期化は人数を選択した時に行います。）
@@ -33,4 +31,8 @@ class GlobalValiables {
     //    TODO ↑本当はライフサイクルと合わせたほうが良い。例えば、ゲーム毎に意味のある数字なのでゲームで一位になるようにしたほうが良い。
 //    ユーザーデフォルトを設定します。
     var defaults = UserDefaults.standard
+//    名前保存用に選択した人数を格納します
+    var nameSaveNumber:Int?
+//    名前保存用に選択した人数の順番を格納します。
+    var nameSaveOrder:Int = 1
 }

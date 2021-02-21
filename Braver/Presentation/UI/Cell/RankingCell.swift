@@ -44,6 +44,7 @@ class RankingCell:BRView{
         }
         rankingUpperHeaderViewLeft.addSubview(rankingLeftUpperHeaderViewLeft)
         let rankingRightUpperHeaderViewLeft = BRLabel(text: upperLeftViewRightLabel, textSize: 16, textColor: .yellow,backGroundColor: .white, yose: .left)
+        rankingRightUpperHeaderViewLeft.adjustsFontSizeToFitWidth = true
         rankingRightUpperHeaderViewLeft.configureLayout { (layout) in
             layout.isEnabled = true
             layout.width = YGValue(view.frame.width / 4)

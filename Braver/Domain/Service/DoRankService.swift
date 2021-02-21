@@ -82,8 +82,8 @@ class DoRankService {
     private func copy(originanPlayer:Array<Player>) -> Array<Player>{
         var copyPlayers = Array<Player>()
         originanPlayer.forEach { (player) in
-            var copyPlayer = player
-            var result = player.result
+            let copyPlayer = player
+            let result = player.result
             copyPlayer.result = result
             copyPlayers.append(copyPlayer)
         }
@@ -106,14 +106,93 @@ class DoRankService {
         global.numberList = [0,maxNumberReal / 2,maxNumberReal]
     }
     func isKingsMode(list:Array<Player>) -> Bool{
-        if list[0].selectedNumber == 4 && list[1].selectedNumber != 4 && global.defaults.bool(forKey: "isOsama"){
+        if list[0].selectedNumber == global.numberList[1] && list[1].selectedNumber != global.numberList[1] && global.defaults.bool(forKey: "isOsama"){
             return true
         }
         return false
     }
-    func updateUserDefaults(isOmit:Bool,isNameSaved:Bool,isOsama:Bool){
-        global.defaults.set(isNameSaved, forKey: "isOmit")
-        global.defaults.set(isOmit, forKey: "isNameSaved")
+    func updateUserDefaults(isNameSaved:Bool,isOsama:Bool){
+        global.defaults.set(isNameSaved, forKey: "isNameSaved")
         global.defaults.set(isOsama, forKey: "isOsama")
+    }
+    func addCountNameSavedOrder(){
+        global.nameSaveOrder += 1
+    }
+    func setNameSavedNumber(nameSaveNumber:Int){
+        global.nameSaveNumber = nameSaveNumber
+        
+    }
+    func clearNameSaved(){
+        global.nameSaveOrder = 1
+        global.nameSaveNumber = 0
+    }
+    func nameSave(name:String){
+        let key = "nameNumber" + "_" + String(global.nameSaveNumber!) + "_" + "nameOrder" + "_" + String(global.nameSaveOrder)
+        global.defaults.set(name, forKey: key)
+        print(key)
+    }
+    func initNameSave(){
+        global.defaults.register(defaults: ["nameNumber_3_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_3_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_3_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_4_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_4_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_4_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_4_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_5_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_5_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_5_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_5_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_5_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_6_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_6_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_6_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_6_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_6_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_6_nameOrder_6" : "PLAYER6",
+                                            "nameNumber_7_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_7_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_7_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_7_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_7_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_7_nameOrder_6" : "PLAYER6",
+                                            "nameNumber_7_nameOrder_7" : "PLAYER7",
+                                            "nameNumber_8_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_8_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_8_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_8_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_8_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_8_nameOrder_6" : "PLAYER6",
+                                            "nameNumber_8_nameOrder_7" : "PLAYER7",
+                                            "nameNumber_8_nameOrder_8" : "PLAYER8",
+                                            "nameNumber_9_nameOrder_1" : "PLAYER2",
+                                            "nameNumber_9_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_9_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_9_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_9_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_9_nameOrder_6" : "PLAYER6",
+                                            "nameNumber_9_nameOrder_7" : "PLAYER7",
+                                            "nameNumber_9_nameOrder_8" : "PLAYER8",
+                                            "nameNumber_9_nameOrder_9" : "PLAYER9",
+                                            "nameNumber_10_nameOrder_1" : "PLAYER1",
+                                            "nameNumber_10_nameOrder_2" : "PLAYER2",
+                                            "nameNumber_10_nameOrder_3" : "PLAYER3",
+                                            "nameNumber_10_nameOrder_4" : "PLAYER4",
+                                            "nameNumber_10_nameOrder_5" : "PLAYER5",
+                                            "nameNumber_10_nameOrder_6" : "PLAYER6",
+                                            "nameNumber_10_nameOrder_7" : "PLAYER7",
+                                            "nameNumber_10_nameOrder_8" : "PLAYER8",
+                                            "nameNumber_10_nameOrder_9" : "PLAYER9",
+                                            "nameNumber_10_nameOrder_10" : "PLAYER10",
+        ])
+        
+    }
+    func getPlayerName(playerNumber:Int) -> String{
+        var userName = "PLAYER\(playerNumber)"
+        if global.defaults.bool(forKey: "isNameSaved") {
+            let key = "nameNumber" + "_" + String(global.totalPlayerNumber!) + "_" + "nameOrder" + "_" + String(playerNumber)
+            userName = global.defaults.string(forKey: key)!
+        }
+        return userName
     }
 }
