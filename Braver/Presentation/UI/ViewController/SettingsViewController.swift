@@ -28,12 +28,12 @@ class SettingsViewController: BaseViewController, UITableViewDataSource,UITableV
         }
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "名前の保存"
+            cell.textLabel?.text = NSLocalizedString("saveName", comment: "")
             cell.accessoryView = isNameSavedSwitch
         case 1:
-            cell.textLabel?.text = "名前を入力する"
+            cell.textLabel?.text = NSLocalizedString("inputName", comment: "")
         case 2:
-            cell.textLabel?.text = "王様モード"
+            cell.textLabel?.text = NSLocalizedString("osamaMode", comment: "")
             cell.accessoryView = isOsamaSwitch
         default:
             cell.textLabel?.text = ""

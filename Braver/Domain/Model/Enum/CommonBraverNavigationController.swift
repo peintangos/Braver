@@ -18,7 +18,7 @@ class CommonBraverNavigationController:UIViewController{
 //    変数を用意
     var selfNumber:Int!
     var isTapped:Bool?
-    var name:String! = "Player"
+    var name:String! = NSLocalizedString("defaultPlayer", comment: "")
     var memoriList:Array<Int> = [0,4,8]
     
 //    UIをコントローラに宣言しておく
@@ -39,12 +39,12 @@ class CommonBraverNavigationController:UIViewController{
         doRouter()
     }
     
-    init(totalPlayerNumber:Int!,selfNumber:Int,name:String = "Player",modalType:UIModalPresentationStyle = .fullScreen){
+    init(totalPlayerNumber:Int!,selfNumber:Int,name:String = NSLocalizedString("defaultPlayer", comment: ""),modalType:UIModalPresentationStyle = .fullScreen){
 //        super.init(rootViewController: CommonBraverViewController(totalPlayerNumber: 100, selfNumber: 1, modalPresentationStyle: .fullScreen))
         super.init(nibName: nil, bundle: nil)
         self.selfNumber = selfNumber
         self.name = name
-        if name == "Player" {
+        if name == NSLocalizedString("defaultPlayer", comment: "") {
             self.name = name + String(selfNumber)
         }
         self.modalPresentationStyle = modalType
@@ -106,7 +106,7 @@ class CommonBraverNavigationController:UIViewController{
             }
             memoriView.addSubview(number)
         }
-        startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "STRAT", textSize: 60, alpha: 1.0)
+        startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: NSLocalizedString("start", comment: ""), textSize: 60, alpha: 1.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.marginTop = 32

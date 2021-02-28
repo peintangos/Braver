@@ -51,8 +51,8 @@ class ResultViewController :BaseViewController{
         doContentReSize()
         if DoRankService().isKingsMode(list: self.resultList) {
 //           ここの領域外タップで、閉じる動作だがここではなくBRAlertController()の中で処理を行いたいが、うまくできない。
-            alert = UIAlertController(title: "Braver👑👑", message: "おめでとうございます。\n「\(self.resultList[0].name)」さんが王様となりました。\n好きな命令をしてください👑", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction.init(title: "結果を見る", style: UIAlertAction.Style.default, handler: nil))
+            alert = UIAlertController(title: NSLocalizedString("kingOkan", comment: ""), message: "おめでとうございます。\n「\(self.resultList[0].name)」さんが王様となりました。\n好きな命令をしてください👑", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction.init(title: NSLocalizedString("seeResult", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -74,7 +74,7 @@ class ResultViewController :BaseViewController{
             layout.height = YGValue(self.view.frame.height)
             layout.flexDirection = .column
         }
-        resultTitle = BRLabel(text: "RESULT", textSize: 60, textColor: .yellow,backGroundColor: .blue)
+        resultTitle = BRLabel(text: NSLocalizedString("result", comment: ""), textSize: 60, textColor: .yellow,backGroundColor: .blue)
         resultTitle.configureLayout { [self] (layout) in
             layout.isEnabled = true
             layout.width = YGValue(self.view.frame.width)
@@ -85,7 +85,7 @@ class ResultViewController :BaseViewController{
 //            layout.marginTop = YGValue(global.safeAreaTop! + 264 + CGFloat(contentHeightUnFixed) + 416)
         }
         resultTitle.center = contentView.center
-        rankingLabel = BRLabel(text:"Ranking", textSize: 24, textColor: .yellow,alpha: 0, backGroundColor: .white)
+        rankingLabel = BRLabel(text:NSLocalizedString("ranking", comment: ""), textSize: 24, textColor: .yellow,alpha: 0, backGroundColor: .white)
         rankingLabel.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(48)
@@ -105,13 +105,13 @@ class ResultViewController :BaseViewController{
             layout.width = YGValue(self.view.frame.width)
 //            layout.position = .absolute
         }
-        let rankingHeaderView = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "順位", upperLeftViewRightLabel: "名前", upperRightViewRighLabel: "真ん中との差", bottomLeftViewRihtLabel: "選択した数字", bottomRightViewLeftLabel: "被り", bottomRightViewRightLabel: "真ん中")
+        let rankingHeaderView = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: NSLocalizedString("order", comment: ""), upperLeftViewRightLabel: NSLocalizedString("name", comment: ""), upperRightViewRighLabel: NSLocalizedString("diffMidle", comment: ""), bottomLeftViewRihtLabel: NSLocalizedString("selectNumber", comment: ""), bottomRightViewLeftLabel: NSLocalizedString("cover", comment: ""), bottomRightViewRightLabel: NSLocalizedString("middle", comment: ""))
         rankingTableView.addSubview(rankingHeaderView)
         resultList.forEach { eachResult in
             let rankingCell = RankingCell.createRankingCell(view: self.view, upperLeftViewLeftLabel: "\(eachResult.result.order!)位", upperLeftViewRightLabel: eachResult.name, upperRightViewRighLabel: String(eachResult.result.absoluteValue), bottomLeftViewRihtLabel: String(eachResult.result.selectedNumber!), bottomRightViewLeftLabel: eachResult.result.isOverLappedDisplay, bottomRightViewRightLabel: String(eachResult.result.isMiddleDisplay))
             rankingTableView.addSubview(rankingCell)
         }
-        barLabel = BRLabel(text: "Bar", textSize: 24, textColor: .yellow,alpha: 0,backGroundColor: .white)
+        barLabel = BRLabel(text: NSLocalizedString("bar", comment: ""), textSize: 24, textColor: .yellow,alpha: 0,backGroundColor: .white)
         barLabel.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(48)
@@ -127,7 +127,7 @@ class ResultViewController :BaseViewController{
             layout.width = YGValue(self.view.frame.width)
             layout.marginBottom = YGValue(32)
         }
-        backButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "BACK", textSize: 60, alpha: 0)
+        backButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: NSLocalizedString("back", comment: ""), textSize: 60, alpha: 0)
         backButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.height = YGValue(120)
