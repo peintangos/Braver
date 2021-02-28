@@ -50,7 +50,7 @@ class NameSavedGroupViewController: UIViewController,UITableViewDelegate,UITable
 //        複数回にわたって、更新してしまうことになるが問題はないと判断。
         service.setNameSavedNumber(nameSaveNumber: indexPath.row + 3)
         let alertController = UIAlertController(title: "\(global.nameSaveOrder)人目の名前を入力してね。", message: "", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: { [self] (layout) in
+        alertController.addAction(UIAlertAction.init(title: NSLocalizedString("ok", comment: ""), style: UIAlertAction.Style.default, handler: { [self] (layout) in
             service.nameSave(name: alertController.textFields![0].text!)
             self.service.addCountNameSavedOrder()
             if global.nameSaveNumber! >= global.nameSaveOrder {
@@ -80,9 +80,9 @@ class NameSavedGroupViewController: UIViewController,UITableViewDelegate,UITable
         nav.barTintColor = Color.yellow.getColor()
         nav.isTranslucent = false
         
-        let navItem = UINavigationItem(title: "名前の保存")
+        let navItem = UINavigationItem(title: NSLocalizedString("saveName", comment: ""))
 
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItem.Style.done, target: self, action: #selector(closeModal))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("complete", comment: ""), style: UIBarButtonItem.Style.done, target: self, action: #selector(closeModal))
         navItem.rightBarButtonItem?.tintColor = Color.blue.getColor()
         nav.pushItem(navItem, animated: true)
         

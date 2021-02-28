@@ -22,7 +22,7 @@ class QuestionViewController: UIViewController {
 //            テキストの設定の仕方だけ特殊
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor:Color.white.getColor()]
         self.navigationController!.navigationBar.barTintColor = Color.yellow.getColor()
-        self.navigationController!.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItem.Style.done, target: self, action: #selector(closeModal))
+        self.navigationController!.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("complete", comment: ""), style: UIBarButtonItem.Style.done, target: self, action: #selector(closeModal))
         self.navigationController!.navigationBar.tintColor = Color.blue.getColor()
 //        横に3列の想定なので、マージン分を考慮（10*2*3）で、残りを3でわる
         let tileWidth = (global.baseView!.frame.width - 60) / 3
@@ -57,7 +57,7 @@ class QuestionViewController: UIViewController {
             layout.width = YGValue(tileIconWidth)
             layout.height = YGValue(tileIconWidth)
         }
-        let ruleLabel = BRLabel(text: "ルール説明", textSize: 12, textColor: Color.white,backGroundColor: .blue)
+        let ruleLabel = BRLabel(text: NSLocalizedString("ruleExplanation", comment: ""), textSize: 12, textColor: Color.white,backGroundColor: .blue)
         ruleLabel.configureLayout { (layout) in
             layout.isEnabled = true
             layout.marginTop = 10
@@ -87,7 +87,7 @@ class QuestionViewController: UIViewController {
             layout.width = YGValue(tileIconWidth)
             layout.height = YGValue(tileIconWidth)
         }
-        let ruleLabel1 = BRLabel(text: "設定", textSize: 12, textColor: Color.white,backGroundColor: .blue)
+        let ruleLabel1 = BRLabel(text: NSLocalizedString("setting", comment: ""), textSize: 12, textColor: Color.white,backGroundColor: .blue)
         ruleLabel1.configureLayout { (layout) in
             layout.isEnabled = true
             layout.marginTop = 10

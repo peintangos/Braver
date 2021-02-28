@@ -15,7 +15,7 @@ class BRAlertController {
         alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         alertController.view.tintColor = textColor.getColor()
         if isDefaultBackButton {
-            alertController.addAction(UIAlertAction.init(title: "戻る", style: UIAlertAction.Style.cancel, handler: { (UIAlertAction) in
+            alertController.addAction(UIAlertAction.init(title: NSLocalizedString("back2", comment: ""), style: UIAlertAction.Style.cancel, handler: { (UIAlertAction) in
             }))
         }
         let subview = (alertController
@@ -49,7 +49,7 @@ class BRAlertController {
         return self
     }
     func createAlert() -> UIAlertController{
-        return UIAlertController(title: "Braver👑👑", message: "おめでとうございます。", preferredStyle: UIAlertController.Style.alert)
+        return UIAlertController(title: NSLocalizedString("kingOkan", comment: ""), message: NSLocalizedString("conglats", comment: ""), preferredStyle: UIAlertController.Style.alert)
     }
 
     

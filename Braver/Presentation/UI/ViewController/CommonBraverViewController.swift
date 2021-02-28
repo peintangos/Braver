@@ -104,7 +104,7 @@ class CommonBraverViewController :BaseViewController{
                 }
                 memoriView.addSubview(number)
             }
-            startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: "BET", textSize: 60, alpha: 1.0)
+            startButton = BRButton(backgroundColor: .yellow, textColor: .white, text: NSLocalizedString("bet", comment: ""), textSize: 60, alpha: 1.0)
             startButton.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.marginTop = 32

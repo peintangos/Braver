@@ -34,7 +34,7 @@ class SplashViewController: UIViewController {
         return global.isBraver ? .blue : .gray
     }
     var titleText: String{
-        return global.isBraver ? "BRAVER" : "BRAVER2"
+        return global.isBraver ? NSLocalizedString("BRAVERCapital", comment: "") : NSLocalizedString("BRAVER2Capital", comment: "")
     }
     var startTextColor: Color{
         return global.isBraver ? .blue : .gray
@@ -49,7 +49,7 @@ class SplashViewController: UIViewController {
         return global.isBraver ? .yellow : .red
     }
     var braver2Button : String{
-        return global.isBraver ? "BRAVER2" : "BRAVER"
+        return global.isBraver ? NSLocalizedString("BRAVER2Capital", comment: "") : NSLocalizedString("BRAVERCapital", comment: "")
     }
     var braver2ButtonTextColor : Color{
         return global.isBraver ? .gray : .blue
@@ -88,7 +88,7 @@ class SplashViewController: UIViewController {
         
         self.helpButton.rx.tap.subscribe { [self] (layout) in
             let vc = QuestionViewController()
-            vc.title = "説明画面"
+            vc.title = NSLocalizedString("explanationTitle", comment: "")
             
             let nav = UINavigationController(rootViewController: vc)
 //            基本的に、UINavigationの設定はQuestionViewController()で行うが、modalタイプだけはこちらでで対応する。
@@ -109,7 +109,7 @@ class SplashViewController: UIViewController {
     func doMove(){
         Router.showActionSheet(viewController:self,brAlertControler:
                                 BRAlertController()
-                                .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue, service: DoRankService())
+                                .of(title: NSLocalizedString("PlayerNumber", comment: ""),textColor: Color.blue, backGroundColor: Color.blue, service: DoRankService())
                                 .addAction(from: self, title: NSLocalizedString("threepeople", comment: ""))
                                 .addAction(from: self,title: NSLocalizedString("fourpeople", comment: ""))
                                 .addAction(from: self,title: NSLocalizedString("fivepeople", comment: ""))
@@ -158,7 +158,7 @@ class SplashViewController: UIViewController {
         splash.center = view.center
         contentView.addSubview(splash)
 
-        startButton = BRButton(backgroundColor: self.startBackgroundColor, textColor: self.startTextColor, text: "START", textSize: 64,alpha:0.0)
+        startButton = BRButton(backgroundColor: self.startBackgroundColor, textColor: self.startTextColor, text: NSLocalizedString("start", comment: ""), textSize: 64,alpha:0.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.position = .absolute
