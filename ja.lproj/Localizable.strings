@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Braver
+
+  Created by 松尾淳平 on 2021/02/28.
+  
+*/
+"back" = "戻る";
+"kingOkan" = "Braver👑👑";
+"conglats" = "おめでとうございます。";
+"BRAVERCapital" = "BRAVER";
+"BRAVER2Capital" = "BRAVER2";
+"PlayerNumber" = "プレイヤー人数";
+"threepeople" = "3人";
+"fourpeople" = "4人";
+"fivepeople" = "5人";
+"sixpeople" = "6人";
+"sevenpeople" = "7人";
+"eightpeople" = "8人";
+"ninepeople" = "9人";
+"tenpeople" = "10人";
+"defaultpeople" = "デフォルト";
+

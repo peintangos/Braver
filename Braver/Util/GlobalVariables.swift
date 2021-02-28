@@ -35,4 +35,8 @@ class GlobalValiables {
     var nameSaveNumber:Int?
 //    名前保存用に選択した人数の順番を格納します。
     var nameSaveOrder:Int = 1
+//    Braver2かどうか
+    var isBraver = true
+//    ViewController
+    var listViewControllers = Array<SplashViewController>()
 }

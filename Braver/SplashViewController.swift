@@ -12,6 +12,7 @@ import RxCocoa
 let global = GlobalValiables()
 class SplashViewController: UIViewController {
     
+//    UI部品の宣言
     var titleView:UIView!
     var startButton:BRButton!
     var splash:BRImageView!
@@ -19,7 +20,47 @@ class SplashViewController: UIViewController {
     var settingButton:BRButton!
     var helpButton:BRButton!
     var bottomArea:BRView!
+    var goBraver2:BRButton!
     let dispose = DisposeBag()
+    
+//    Braver2への準備
+    var backgroundColor2:Color {
+        return global.isBraver ? .yellow : .red
+    }
+    var titleTextColor: Color{
+        return global.isBraver ? .yellow : .red
+    }
+    var titleBackgroundColor: Color{
+        return global.isBraver ? .blue : .gray
+    }
+    var titleText: String{
+        return global.isBraver ? "BRAVER" : "BRAVER2"
+    }
+    var startTextColor: Color{
+        return global.isBraver ? .blue : .gray
+    }
+    var startBackgroundColor:Color{
+        return global.isBraver ? .yellow : .red
+    }
+    var helpTextColor: Color{
+        return global.isBraver ? .blue : .gray
+    }
+    var helpBackgroundColor:Color{
+        return global.isBraver ? .yellow : .red
+    }
+    var braver2Button : String{
+        return global.isBraver ? "BRAVER2" : "BRAVER"
+    }
+    var braver2ButtonTextColor : Color{
+        return global.isBraver ? .gray : .blue
+    }
+    var braver2ButtonBackgroundColor : Color{
+        return global.isBraver ? .yellow : .red
+    }
+    var questionImage:String{
+        return global.isBraver ? "question" : "question2"
+    }
+    
     private let doRankService = DoRankService()
     
     override func viewDidLoad() {
@@ -31,6 +72,13 @@ class SplashViewController: UIViewController {
         doAnimation()
         doRouter()
         doRankService.initNameSave()
+    }
+    init(backgroundColor:Color) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func doRouter(){
@@ -47,26 +95,35 @@ class SplashViewController: UIViewController {
             nav.modalPresentationStyle = .overFullScreen
             Router.movePageByModal(from: self, to: nav)
         }.disposed(by: dispose)
+        
+        self.goBraver2.rx.tap.subscribe { [self] _ in
+            global.isBraver.toggle()
+//            Braver2へ移行する
+            let nav = SplashViewController(backgroundColor: .red)
+            nav.modalTransitionStyle = .flipHorizontal
+            nav.modalPresentationStyle = .fullScreen
+            Router.movePageByModal(from: self, to: nav)
+        }.disposed(by: dispose)
     }
 
     func doMove(){
         Router.showActionSheet(viewController:self,brAlertControler:
                                 BRAlertController()
                                 .of(title: "プレイヤー人数",textColor: Color.blue, backGroundColor: Color.blue, service: DoRankService())
-                                .addAction(from: self, title: "3人")
-                                .addAction(from: self,title: "4人")
-                                .addAction(from: self,title: "5人")
-                                .addAction(from: self,title: "6人")
-                                .addAction(from: self,title: "7人")
-                                .addAction(from: self,title: "8人")
-                                .addAction(from: self,title: "9人")
-                                .addAction(from: self,title: "10人"))
+                                .addAction(from: self, title: NSLocalizedString("threepeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("fourpeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("fivepeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("sixpeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("sevenpeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("eightpeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("ninepeople", comment: ""))
+                                .addAction(from: self,title: NSLocalizedString("tenpeople", comment: "")))
     }
     
     
     func doLayout(){
 //        BRViewでレイアウト系を決めるのか、configureLayoutを使うのか決めれていない
-        let contentView = BRView(backgroundColor: .yellow)
+        let contentView = BRView(backgroundColor: self.backgroundColor2)
         contentView.configureLayout { (layout) in
           layout.isEnabled = true
           layout.flexDirection = .column
@@ -75,7 +132,7 @@ class SplashViewController: UIViewController {
           layout.alignItems = .center
           layout.justifyContent = .center
         }
-        titleView = BRView(backgroundColor: .blue, frame: CGRect(x: 0, y: 0, width: 0   , height: 0),alpha: 0.0)
+        titleView = BRView(backgroundColor: self.titleBackgroundColor, frame: CGRect(x: 0, y: 0, width: 0   , height: 0),alpha: 0.0)
         titleView.configureLayout{ (layout)  in
           layout.isEnabled = true
           layout.position = .absolute
@@ -86,7 +143,7 @@ class SplashViewController: UIViewController {
             layout.alignItems = .center
         }
         
-        titleLabel = BRLabel(text: "BRAVER", textSize: 72, textColor: .yellow,backGroundColor: .blue,yose:NSTextAlignment.center)
+        titleLabel = BRLabel(text: self.titleText, textSize: 72, textColor: self.titleTextColor,backGroundColor: self.titleBackgroundColor,yose:NSTextAlignment.center)
         titleLabel.configureLayout { (layout) in
             layout.isEnabled = true
         }
@@ -101,7 +158,7 @@ class SplashViewController: UIViewController {
         splash.center = view.center
         contentView.addSubview(splash)
 
-        startButton = BRButton(backgroundColor: .yellow, textColor: .blue, text: "START", textSize: 64,alpha:0.0)
+        startButton = BRButton(backgroundColor: self.startBackgroundColor, textColor: self.startTextColor, text: "START", textSize: 64,alpha:0.0)
         startButton.configureLayout { (layout) in
             layout.isEnabled = true
             layout.position = .absolute
@@ -109,27 +166,40 @@ class SplashViewController: UIViewController {
         startButton.center = view.center
         contentView.addSubview(startButton)
         
-        bottomArea = BRView(backgroundColor: .yellow)
+        bottomArea = BRView(backgroundColor: self.startBackgroundColor)
         bottomArea.configureLayout { (layout) in
             layout.isEnabled = true
             layout.display = .flex
             layout.flexDirection = .row
-            layout.justifyContent = .flexStart
+            layout.justifyContent = .spaceBetween
+            layout.alignItems = .center
             layout.marginTop = 400
-            layout.marginLeft = 100
+            layout.paddingLeft = 50
+            layout.paddingRight = 50
             layout.width = YGValue(global.baseView!.frame.width)
-            
         }
 
-        self.helpButton = BRButton(backgroundColor: .yellow, textColor: .yellow, text: "", alpha: 0)
-        self.helpButton.setImage(UIImage(named: "question"), for: UIControl.State.normal)
+        self.helpButton = BRButton(backgroundColor: self.helpBackgroundColor, textColor: self.helpTextColor, text: "", alpha: 0)
+        self.helpButton.setImage(UIImage(named: self.questionImage), for: UIControl.State.normal)
+        bottomArea.addSubview(self.helpButton)
 //        self.helpButton.setShadow()
         helpButton.configureLayout { (layout) in
                 layout.isEnabled = true
                 layout.width = YGValue(40)
                 layout.height = YGValue(40)
             }
-        bottomArea.addSubview(self.helpButton)
+        self.goBraver2 = BRButton(backgroundColor: self.braver2ButtonBackgroundColor, textColor: braver2ButtonTextColor, text: braver2Button, textSize: 24, alpha: 0)
+        self.goBraver2.layer.cornerRadius = 10
+        self.goBraver2.layer.shadowColor = UIColor.black.cgColor
+        self.goBraver2.layer.shadowOpacity = 0.5
+        self.goBraver2.layer.shadowOffset = .zero
+//        self.goBraver2.layer.shadowRadius = 1
+        goBraver2.configureLayout { (layout) in
+            layout.isEnabled = true
+            layout.width = YGValue(150)
+            layout.height = YGValue(50)
+        }
+        bottomArea.addSubview(goBraver2)
         
         contentView.addSubview(bottomArea)
         
@@ -183,6 +253,12 @@ class SplashViewController: UIViewController {
         } completion: { _ in
             self.helpButton.alpha = 1
         }
+        UIView.animate(withDuration: 3, delay: 2, options: UIView.AnimationOptions.init()) {
+            self.goBraver2.alpha = 1
+        } completion: { _ in
+            self.goBraver2.alpha = 1
+        }
+
         
     }
     @objc func closeModal(){
