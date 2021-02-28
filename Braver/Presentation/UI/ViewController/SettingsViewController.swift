@@ -23,6 +23,9 @@ class SettingsViewController: BaseViewController, UITableViewDataSource,UITableV
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         cell.tintColor = Color.blue.getColor()
         cell.textLabel?.textColor = Color.blue.getColor()
+        if #available(iOS 14, *){
+            cell.backgroundColor = .white
+        }
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "名前の保存"

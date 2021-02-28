@@ -16,6 +16,8 @@ class NumberInputSlider: UISlider {
         self.maximumValue = Float(global.numberList[2])
 //        0始まりなので、偶数を想定している
         self.value = maximumValue / 2
+//        初期値をisBraverかどうかで変更する
+        self.setValue(global.isBraver ? self.value : self.maximumValue, animated: true)
     }
     
 //    SliderBarは、本来つまみだけしか弄れないようなAPIになっていたので、Overrideしました。
@@ -32,7 +34,7 @@ class NumberInputSlider: UISlider {
 //    触れる位置をy軸方向に広げました。
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         var wideBounds = bounds
-        wideBounds.size.height += 32 // boundsを20.0px分下に拡張
+        wideBounds.size.height += 40 // boundsを40px分下に拡張
         return wideBounds.contains(point) // pointがwideBounds内にあるかどうか
     }
     
@@ -49,8 +51,16 @@ class NumberInputSlider: UISlider {
 //    デフォルトでは中央の線はないので、追加しました。
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
-        path.move(to: rect.midX, rect.minY)
-        path.addLine(to: rect.midX, rect.maxY)
+//        Braver2の場合は
+        if global.isBraver {
+            path.move(to: rect.midX, rect.minY)
+            path.addLine(to: rect.midX, rect.maxY)
+        } else {
+//            NumberInputSliderの初期値の丸と合わせるために固定値をいい感じに設定した
+            path.move(to: rect.maxX - 14, rect.minY)
+            path.addLine(to: rect.maxX - 14, rect.maxY)
+        }
+        
         path.lineWidth = 3.0
         path.close()
         Color.white.getColor().setStroke()

@@ -21,7 +21,7 @@ class Player  {
     var selectedNumber:Int!
     var result:Result!
     var absoluteValue:Int {
-        abs(selectedNumber - global.numberList[1])
+        global.isBraver ? abs(selectedNumber - global.numberList[1]) : abs(selectedNumber - global.numberList[2])
     }
 //    TODO どうすれば良いのかわからないが、scoreとselectedNumberは初期化時点では決まらないので、initには含めない。
     init(name:String = "デフォルト",order:Int) {

@@ -39,7 +39,7 @@ class RankingNumberLine :BRView {
         _ =  rect.maxX - 20
 //        二桁の時に見切れないようにするために、
         let realRightCenterX = rect.maxX  - 20
-        _ = rect.maxX  - 10
+        let realRightCenterXX = rect.maxX  - 10
 //        真ん中部分です
         _ = rect.midX
         _ = rect.minY
@@ -92,7 +92,7 @@ class RankingNumberLine :BRView {
 //        右側の最大ラベルと作成します。
         let numberLabelMax = BRLabel(text: String(global.numberList[2]), textSize: 24, textColor: .white, width: 16, height: 16, alpha: 1, backGroundColor: .blue, yose: .center)
         numberLabelMax.frame = CGRect(x: Int(realRightCenterX), y: Int(centerSixteenUpperFirstY), width: 28, height: 24)
-        numberLabelMax.center.x = CGFloat(realRightCenterX)
+        numberLabelMax.center.x = CGFloat(realRightCenterXX)
         self.addSubview(numberLabelMax)
 
 //        ここのスコアを数直線上に描画していきます。

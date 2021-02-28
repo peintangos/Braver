@@ -106,7 +106,8 @@ class DoRankService {
         global.numberList = [0,maxNumberReal / 2,maxNumberReal]
     }
     func isKingsMode(list:Array<Player>) -> Bool{
-        if list[0].selectedNumber == global.numberList[1] && list[1].selectedNumber != global.numberList[1] && global.defaults.bool(forKey: "isOsama"){
+        let maxNumber = global.isBraver ? global.numberList[1] : global.numberList[2]
+        if list[0].selectedNumber == maxNumber && list[1].selectedNumber != maxNumber && global.defaults.bool(forKey: "isOsama"){
             return true
         }
         return false

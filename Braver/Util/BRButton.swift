@@ -17,7 +17,8 @@ class BRButton: UIButton {
     }
     init(backgroundColor:Color = .yellow,textColor:Color = .blue,text:String = "",textSize :CGFloat = 64,alpha:CGFloat = 1) {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        self.createButton(backgroundColor: backgroundColor, textColor: textColor, text: text,alpha:alpha)
+        self.createButton(backgroundColor: backgroundColor, textColor: textColor, text: text,textSize:textSize,alpha:alpha)
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     required init?(coder: NSCoder) {

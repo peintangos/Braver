@@ -21,23 +21,23 @@ class NameSavedGroupViewController: UIViewController,UITableViewDelegate,UITable
         global.nameSaveNumber = indexPath.row + 3
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "3人"
+            cell.textLabel?.text = NSLocalizedString("threepeople", comment: "")
         case 1:
-            cell.textLabel?.text = "4人"
+            cell.textLabel?.text = NSLocalizedString("fourpeople", comment: "")
         case 2:
-            cell.textLabel?.text = "5人"
+            cell.textLabel?.text = NSLocalizedString("fivepeople", comment: "")
         case 3:
-            cell.textLabel?.text = "6人"
+            cell.textLabel?.text = NSLocalizedString("sixpeople", comment: "")
         case 4:
-            cell.textLabel?.text = "7人"
+            cell.textLabel?.text = NSLocalizedString("sevenpeople", comment: "")
         case 5:
-            cell.textLabel?.text = "8人"
+            cell.textLabel?.text = NSLocalizedString("eightpeople", comment: "")
         case 6:
-            cell.textLabel?.text = "9人"
+            cell.textLabel?.text = NSLocalizedString("ninepeople", comment: "")
         case 7:
-            cell.textLabel?.text = "10人"
+            cell.textLabel?.text = NSLocalizedString("tenpeople", comment: "")
         default:
-            cell.textLabel?.text = "デフォルト"
+            cell.textLabel?.text = NSLocalizedString("defaultpeople", comment: "")
         }
         return cell
     }
